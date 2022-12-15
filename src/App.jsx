@@ -1,11 +1,15 @@
 
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import Administrador from './components/views/Administrador';
 
 function App() {
   return (
-    <div className="App">
-      <h1>HOLA FUNCIONO</h1>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route exact path="/Administrador" element={<Administrador></Administrador>}></Route>
+    </Routes>
+    </BrowserRouter>
   );
 }
 
