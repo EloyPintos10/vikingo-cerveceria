@@ -16,4 +16,39 @@
     color: rgb(8, 8, 8); 
     text-shadow:  -2px 0 #4ae6e9, 0 1px #4ae6e9, 1px 0 #141619, 0 -1px #4ae6e9;
     }
+
+    .tarjetas{
+        width: 17rem;
+       justify-content: center;
+        margin-top: 25px;
+        box-shadow: 0px 5px 10px 0px rgb(26, 26, 26);
+        transition: 200ms;
+        border-radius: 15px;
+        background-color: white;
+       
+    }
+    .tarjetas:hover {
+        transform: scale(0.9);
+        transition: all 0.5s ease;
+      }
+    
+    .imgTarjetas{
+    width: 100%;
+    height:25rem;
+    object-fit: unset;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    
+    }
+    
+    .tarjetas:hover{
+        transition: ease;
+        text-decoration: none;
+        color: black;
+    }
+    .tituloscard:hover{
+     
+        text-decoration: none;
+        color: black;}
+    
     
