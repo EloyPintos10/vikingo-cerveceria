@@ -1,0 +1,84 @@
+/* footer siempre abajo */
+#root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.mainSection{
+    flex-grow: 1;
+}
+
+
+.fondoTabla{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 17%, rgba(0,212,255,1) 46%, rgba(13,9,36,1) 85%);
+color: white;
+box-shadow: 0px 3px 10px 0px black;
+}
+
+.imgProductos{
+    width: 7rem;
+    height: 5rem;
+    object-fit: cover;
+}
+
+
+
+
+
+/* pagina crear productos */
+
+.formulario{ 
+    
+    color: white;
+    width: 50%;
+    height: fit-content;
+    padding: 20px 10px 20px 10px;
+    border-radius: 25px;
+    box-shadow: 2px 4px 10px 2px rgb(78, 78, 78);
+    
+
+
+}
+
+.btnGuardar{
+    background-color: #003366;
+    color: white;
+    
+    padding: 10px 50px;
+
+}
+
+.btnGuardar:hover{
+    background-color: white;
+    color: #003366;
+    
+    font-weight: 700;
+}
+
+#fondoCrear{
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 17%, rgba(0,212,255,1) 46%, rgba(13,9,36,1) 85%);
+        
+        
+}
+
+.titulosadmin{
+    font-size: 20px;
+}
+
+/* editar producto */
+
+.botones{
+    display: grid;
+
+}
+
+
+@media all and (max-width:756px){
+    .formulario{
+        width: 90%;
+    }
+
+}

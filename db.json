@@ -1,0 +1,25 @@
+{
+  "productos": [
+    {
+      "nombreProducto": "Jeans Elastizado azul",
+      "precio": 6500,
+      "imagen": "https://cf.shopee.com.mx/file/0abea974dbb16231413b30afbf6f03e5",
+      "categoria": "jeans",
+      "id": 1
+    },
+    {
+      "nombreProducto": "Remera Mangas Largas",
+      "precio": "4200",
+      "imagen": "https://www.karavaka.com/wp-content/uploads/2022/08/JH-204-02-F1-scaled.jpg",
+      "categoria": "remeras",
+      "id": 2
+    },
+    {
+      "nombreProducto": "Remera basica negra",
+      "precio": "3750",
+      "imagen": "https://d3ugyf2ht6aenh.cloudfront.net/stores/001/231/326/products/1200x1200-hombre-barba_0003_hombre-barba-negro1-dcea81a2f7aefc2c9a15918957054621-1024-1024.jpg",
+      "categoria": "remeras",
+      "id": 3
+    }
+  ]
+}
