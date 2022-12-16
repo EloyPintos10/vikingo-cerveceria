@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { Card, Col } from "react-bootstrap";
 
 
-const cardProductoInicio = ({producto}) => {
-    const{ _id, nombreProducto, precio, imagen } = { ...producto};
+const CardProductoInicio = ({producto}) => {
+    const{ id, nombreProducto, precio, imagen } = { ...producto};
     return (
         <div>
              
@@ -23,4 +23,4 @@ const cardProductoInicio = ({producto}) => {
     );
 };
 
-export default cardProductoInicio;
+export default CardProductoInicio;

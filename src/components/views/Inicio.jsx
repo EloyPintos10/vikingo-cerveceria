@@ -1,10 +1,17 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
-import cardProductoInicio from './pagInicio/cardProductoInicio';
+import CardProductoInicio from './pagInicio/CardProductoInicio';
 import { useEffect, useState } from "react";
+import { consultarAPI } from '../helpers/queriesAdmin';
 
 const Inicio = () => {
     const [productos, setProductos] = useState([]);
+    useEffect(()=>{
+        consultarAPI().then((respuesta)=>{
+          //console.log(respuesta)
+         setProductos(respuesta);
+        })
+    },[])
     return (
         <>
         <div className='text-center'>
@@ -17,12 +24,12 @@ const Inicio = () => {
 
         <Row xs={1} md={2} lg={4} >
           {productos.map((producto) => (
-            <cardProductoInicio
-              key={producto._id}
+            <CardProductoInicio
+              key={producto.id}
               producto={producto}
               setProductos={setProductos}
               
-            ></cardProductoInicio>
+            ></CardProductoInicio>
           ))}
         </Row>
 </article>

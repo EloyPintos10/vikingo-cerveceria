@@ -1,0 +1,107 @@
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container, Table} from 'react-bootstrap';
+import "../../css/admin.css"
+import { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
+import { consultarAPI } from '../helpers/queriesAdmin';
+import ItemProductos from './pagAdmin/ItemProductos';
+import { BsFillPlusCircleFill } from "react-icons/bs";
+import { Link } from 'react-router-dom';
+
+
+const Administrador = () => {
+  const [productos, setProductos] = useState([]);
+
+  useEffect(() => {
+    consultarAPI().then(
+      (respuesta) => {
+        //la respuesta es exitosa
+        setProductos(respuesta);
+      },
+      (reason) => {
+        console.log(reason);
+        //mostrar un mensaje al usuario
+        Swal.fire(
+          'Ocurrio un error',
+          'Intentelo nuevamente en unos minutos',
+          'error'
+        )
+      }
+    );
+  }, []);
+    return (
+        <div>
+            
+            <h1 className='text-center my-4'>Bienvenido Administrador </h1>
+<Container>
+
+       <div className='text-center'>
+<div className='d-flex justify-content-between'>
+          <p className='titulosadmin'>LISTADO PRODUCTOS</p>
+          <Link to="/CrearProducto"><BsFillPlusCircleFill className='fs-2'/></Link>          
+          
+</div>
+        <Table responsive bordered className='fondoTabla'>
+      <thead>
+        <tr>
+          
+          <th>Id</th>
+          <th>Producto</th>
+          <th>Precio</th>
+          <th>Imagen</th>
+          <th>Categoria</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>        
+        {            
+            productos.map((producto)=> <ItemProductos key={producto.id} producto={producto} setProductos={setProductos}></ItemProductos> )
+          }
+      </tbody>
+    </Table>
+     
+       </div>
+       <div className='text-center'>
+
+          <p className='titulosadmin'>LISTADO USUARIOS</p>
+        <Table responsive bordered className='fondoTabla'>
+      <thead>
+        <tr>
+          <th>Usuario</th>
+          <th>Apellido y Nombre</th>
+          <th>Estado</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+       
+      </tbody>
+    </Table>
+       </div>
+      
+     <div className='text-center'>
+
+          <p className='titulosadmin'>LISTADO COMPRAS</p>
+        <Table responsive bordered className='fondoTabla'>
+      <thead>
+        <tr>
+          <th>N. Pedido</th>
+          <th>Usuario</th>
+          <th>Detalle</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </Table>
+     </div>
+        
+    
+</Container>
+        </div>
+    );
+};
+
+export default Administrador;
