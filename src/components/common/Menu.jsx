@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import "../../css/inicio.css";
 
 
 const Menu = () => {
@@ -14,8 +15,8 @@ const Menu = () => {
              
       {[false].map((expand) => (
         <Navbar key={expand} bg="black" expand={expand} className="mb-3 p-4">
-          <Container fluid>
-            <Navbar.Brand className='text-light fw-bold' href="#">RAGNAR INDUMENTARIA</Navbar.Brand>
+          <Container fluid >
+            <Navbar.Brand className='text-light tuclase ' href="#">RAGNAR INDUMENTARIA</Navbar.Brand>
             <Navbar.Toggle className='bg-light' aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas 
               id={`offcanvasNavbar-expand-${expand}`}
@@ -32,17 +33,21 @@ const Menu = () => {
                   <Nav.Link href="#action1">Inicio</Nav.Link>
                   <Nav.Link href="#action2">Productos</Nav.Link>
                   <NavDropdown
-                    title="Dropdown"
+                    title="Productos"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
                   >
-                    <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
+                   
+                    <NavDropdown.Item href="#action3">Camisas</NavDropdown.Item>
                     <NavDropdown.Item href="#action4">
-                      Another action
+                      Remeras
                     </NavDropdown.Item>
-                    <NavDropdown.Divider />
                     <NavDropdown.Item href="#action5">
-                      Something else here
+                      Chombas
                     </NavDropdown.Item>
+                    <NavDropdown.Item href="#action6">
+                      Short de Baño
+                    </NavDropdown.Item>
+                   
                   </NavDropdown>
                 </Nav>
                 <Form className="d-flex">

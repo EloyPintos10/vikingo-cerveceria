@@ -8,7 +8,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
    <BrowserRouter>
+   <Menu></Menu>
    <Routes>
+   
     <Route exact path="/Menu" element={<Menu></Menu>}></Route>
     <Route exact path="/Administrador" element={<Administrador></Administrador>}></Route>
     <Route exact path="/inicio" element={<Inicio></Inicio>}></Route>
