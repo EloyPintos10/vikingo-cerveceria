@@ -28,5 +28,13 @@
       "categoria": "camisas",
       "id": 4
     }
+  ],
+  "usuarios": [
+    {
+      "nombre": "majo",
+      "email": "majo@hotmail.com",
+      "password": "majo154210",
+      "id": 1
+    }
   ]
 }

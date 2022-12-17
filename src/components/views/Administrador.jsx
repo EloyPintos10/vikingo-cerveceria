@@ -8,10 +8,14 @@ import { consultarAPI } from '../helpers/queriesAdmin';
 import ItemProductos from './pagAdmin/ItemProductos';
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
+import { consultarUserAPI } from '../helpers/queriesRegistro';
+import ItemUsuarios from "../views/pagAdmin/ItemUsuarios"
+
 
 
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
+  const [usuarios, setUsuarios] = useState([]);
 
   useEffect(() => {
     consultarAPI().then(
@@ -30,6 +34,27 @@ const Administrador = () => {
       }
     );
   }, []);
+  
+  
+  useEffect(() => {
+    consultarUserAPI().then(
+      (respuesta) => {
+        //la respuesta es exitosa
+        setUsuarios(respuesta);
+      },
+      (reason) => {
+        console.log(reason);
+        //mostrar un mensaje al usuario
+        Swal.fire(
+          'Ocurrio un error',
+          'Intentelo nuevamente en unos minutos',
+          'error'
+        )
+      }
+    );
+  }, []);
+
+
     return (
         <div>
             
@@ -68,14 +93,17 @@ const Administrador = () => {
         <Table responsive bordered className='fondoTabla'>
       <thead>
         <tr>
+          <th>id</th>
           <th>Usuario</th>
-          <th>Apellido y Nombre</th>
-          <th>Estado</th>
+          <th>Email</th>
+          <th>Contraseña</th>
           
         </tr>
       </thead>
       <tbody>
-       
+      {            
+            usuarios.map((usuario)=> <ItemUsuarios key={usuario.id} usuario={usuario} setUsuarios={setUsuarios}></ItemUsuarios> )
+          }
       </tbody>
     </Table>
        </div>
