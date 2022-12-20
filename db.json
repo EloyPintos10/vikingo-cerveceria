@@ -31,18 +31,32 @@
   ],
   "usuarios": [
     {
-      "nombre": "majo",
-      "email": "majoaguero@hotmail.com",
-      "password": "majo154210",
-      "perfil": "cliente",
-      "id": 1
-    },
-    {
       "nombre": "eloy",
       "email": "ragnar@hotmail.com",
       "password": "Pintose1542",
       "perfil": "admin",
       "id": 2
+    },
+    {
+      "nombre": "Leonel",
+      "email": "eloy_pintos14@hotmail.com",
+      "password": "kjhguadshfiuadhfiahsd",
+      "perfil": "cliente",
+      "id": 3
+    },
+    {
+      "nombre": "robertita",
+      "email": "eloy_pintos14@hotmail.com",
+      "password": "hghdgfhdfhhfhfghdf",
+      "perfil": "cliente",
+      "id": 4
+    },
+    {
+      "nombre": "majo",
+      "email": "majoaguero20@hotmail.com",
+      "password": "fdghdfhfghdhdgfhdfgdg",
+      "perfil": "cliente",
+      "id": 5
     }
   ]
 }

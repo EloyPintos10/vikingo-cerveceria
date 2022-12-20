@@ -87,9 +87,12 @@ const Administrador = () => {
     </Table>
      
        </div>
-       <div className='text-center'>
-
+       <div className='text-center my-4'>
+<div className='d-flex justify-content-between'>
           <p className='titulosadmin'>LISTADO USUARIOS</p>
+          <Link to="/Registro"><BsFillPlusCircleFill className='fs-2'/></Link>
+
+</div>
         <Table responsive bordered className='fondoTabla'>
       <thead>
         <tr>

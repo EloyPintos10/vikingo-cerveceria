@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { crearUsuarioAPI } from '../helpers/queriesRegistro';
 import "../../css/registro.css"
-
+import emailjs from "emailjs-com"
 
 const Registro = ({setUsuarioLogueado}) => {
     const navigate = useNavigate();
@@ -22,9 +22,7 @@ const Registro = ({setUsuarioLogueado}) => {
        datos.perfil = "admin"
       }else{
         datos.perfil = "cliente"
-      }
-
-      console.log(datos.perfil)
+      }    
      
         crearUsuarioAPI(datos).then((respuesta) => {
           if (respuesta.status === 201) {
@@ -34,6 +32,21 @@ const Registro = ({setUsuarioLogueado}) => {
               "Inicia sesion con la nueva cuenta.",
               "success"
             );
+
+            var parametros = {
+              nombre:(datos.nombre),
+              email:(datos.email) 
+              
+          };
+            emailjs.send('service_2khpjbl', 'template_nkrf3fq',parametros, "-GX5UHwn7TZrNOH2Y")
+            .then(function(response) {
+               console.log('ENVIADO!', response.status, response.text);
+            }, function(error) {
+               console.log('FALLO...', error);
+            });
+           
+            
+            
             //guardar la sesion del usuario en localstorage
             //   localStorage.setItem('tokenRagnar', JSON.stringify(datos));
               //actualizar el state usuarioLogueado
@@ -48,13 +61,15 @@ const Registro = ({setUsuarioLogueado}) => {
             );
           }
         });
-      
+        
+       
+
     };
     return (
         <div>
             <h3 className="text-center">Registro</h3>
       
-          <Form onSubmit={handleSubmit(onSubmit)} className="container formulario" id='fondoCrear'>
+          <Form onSubmit={handleSubmit(onSubmit)}  className="container formulario" id='fondoCrear'>
             <Form.Group className="mb-2 container">
               <Form.Control
                 type="text"
