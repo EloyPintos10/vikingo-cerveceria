@@ -7,6 +7,7 @@ import Menu from "./components/common/Menu"
 import CrearProductos from './components/views/pagAdmin/CrearProductos';
 import EditarProducto from './components/views/pagAdmin/EditarProducto';
 import "bootstrap/dist/css/bootstrap.min.css";
+import { SlHandbag } from "react-icons/sl";
 function App() {
   return (
    <BrowserRouter>

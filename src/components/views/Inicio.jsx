@@ -22,7 +22,7 @@ const Inicio = () => {
 
 <article>
 
-        <Row xs={1} md={2} lg={4} >
+        <Row xs={1} md={2} lg={3} >
           {productos.map((producto) => (
             <CardProductoInicio
               key={producto.id}
