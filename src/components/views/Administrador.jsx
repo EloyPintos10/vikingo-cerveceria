@@ -96,7 +96,7 @@ const Administrador = () => {
           <th>id</th>
           <th>Usuario</th>
           <th>Email</th>
-          <th>Contraseña</th>
+          <th>Perfil</th>
           
         </tr>
       </thead>

@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import { consultarUserAPI, borrarUsuarioAPI } from '../../helpers/queriesRegistro';
 import Swal from 'sweetalert2';
 const itemProductos = ({usuario, setUsuarios}) => {
-    const {id, nombre, email, password} = {...usuario} 
+    const {id, nombre, email, password, perfil} = {...usuario} 
 
     const borrarUsuario = ()=>{
         // busco el token de localstorage y lo envio
@@ -34,7 +34,7 @@ const itemProductos = ({usuario, setUsuarios}) => {
       <td>{nombre}</td>
       <td>{email}</td>
       
-      <td>{password}</td>
+      <td>{perfil}</td>
       <td>
         <div className='botones'>
 

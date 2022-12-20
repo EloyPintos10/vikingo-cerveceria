@@ -17,6 +17,14 @@ const Registro = ({setUsuarioLogueado}) => {
     } = useForm();
   
     const onSubmit = (datos) => {
+
+      if(datos.email === "ragnar@hotmail.com" && datos.password === "Pintose1542"){
+       datos.perfil = "admin"
+      }else{
+        datos.perfil = "cliente"
+      }
+
+      console.log(datos.perfil)
      
         crearUsuarioAPI(datos).then((respuesta) => {
           if (respuesta.status === 201) {
@@ -31,7 +39,7 @@ const Registro = ({setUsuarioLogueado}) => {
               //actualizar el state usuarioLogueado
             //   setUsuarioLogueado(datos)
               // redireccionamos
-              navigate("/administrador");
+              navigate("/inicio");
           } else {
             Swal.fire(
               `Hubo un error inesperado`,

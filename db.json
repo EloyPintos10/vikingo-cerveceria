@@ -32,9 +32,17 @@
   "usuarios": [
     {
       "nombre": "majo",
-      "email": "majo@hotmail.com",
+      "email": "majoaguero@hotmail.com",
       "password": "majo154210",
+      "perfil": "cliente",
       "id": 1
+    },
+    {
+      "nombre": "eloy",
+      "email": "ragnar@hotmail.com",
+      "password": "Pintose1542",
+      "perfil": "admin",
+      "id": 2
     }
   ]
 }
