@@ -2,15 +2,15 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 import { consultarUserAPI, borrarUsuarioAPI } from '../../helpers/queriesRegistro';
 import Swal from 'sweetalert2';
-const itemProductos = ({usuario, setUsuarios}) => {
-    const {id, nombre, email, password, perfil} = {...usuario} 
+const itemUsuarios = ({usuario, setUsuarios}) => {
+    const {id, nombre, email, perfil} = {...usuario} 
 
     const borrarUsuario = ()=>{
         // busco el token de localstorage y lo envio
         // const token = JSON.parse(localStorage.getItem('tokenRagnar')).token|| null
       borrarUsuarioAPI(id).then((respuesta)=>{
         
-        // TAREA: agregar la ventana de sweetaler para preguntar si queremos borrar el producto, solo en el caso de la respuesta afirmativa realizar el sieguiente codigo:
+        // TAREA: agregar la ventana de sweetalert para preguntar si queremos borrar el producto, solo en el caso de la respuesta afirmativa realizar el sieguiente codigo:
         if(respuesta.status === 200){
           // se pudo borrar el producto
           Swal.fire("Usuario eliminado","El usuario fue eliminado exitosamente","success");
@@ -48,4 +48,4 @@ const itemProductos = ({usuario, setUsuarios}) => {
     );
 };
 
-export default itemProductos;
+export default itemUsuarios;
