@@ -48,9 +48,9 @@ const Registro = ({setUsuarioLogueado}) => {
             
             
             //guardar la sesion del usuario en localstorage
-            //   localStorage.setItem('tokenRagnar', JSON.stringify(datos));
+              localStorage.setItem('tokenRagnar', JSON.stringify(datos));
               //actualizar el state usuarioLogueado
-            //   setUsuarioLogueado(datos)
+               setUsuarioLogueado(datos)
               // redireccionamos
               navigate("/inicio");
           } else {
@@ -67,9 +67,9 @@ const Registro = ({setUsuarioLogueado}) => {
     };
     return (
         <div>
-            <h3 className="text-center">Registro</h3>
       
-          <Form onSubmit={handleSubmit(onSubmit)}  className="container formulario" id='fondoCrear'>
+          <Form onSubmit={handleSubmit(onSubmit)}  className="container formulario mt-5" id='fondoCrear'>
+            <h3 className="text-center mb-4">Registro</h3>
             <Form.Group className="mb-2 container">
               <Form.Control
                 type="text"
@@ -142,7 +142,7 @@ const Registro = ({setUsuarioLogueado}) => {
               <button
                 className="btn btn-danger btn-sm mt-2 btnRegistrarse"
                 type="button"
-                onClick={() => navigate("/login/iniciarSesion")}
+                onClick={() => navigate("/login")}
               >
                 ¿Ya estas registrado?
               </button>
