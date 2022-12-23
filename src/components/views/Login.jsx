@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { consultarUserAPI, login } from "../helpers/queriesRegistro";
-
+import bannerVertical from "../common/img/bannerVertical.png"
 const Login = ({ setUsuarioLogueado }) => {
   const navigate = useNavigate();
   const {
@@ -52,12 +52,16 @@ const Login = ({ setUsuarioLogueado }) => {
     <div>
       <Form
         onSubmit={handleSubmit(onSubmit)}
-        className="container formulario mt-5"
+        className="container formulario2 mt-5"
         id="fondoCrear"
       >
-        <h3 className="text-center mb-4 ">Iniciar Sesión</h3>
+        <div className="row justify-content-center">
 
-        <Form.Group className="mb-2 container">
+        <div className="col-lg-6 col-md-6">
+
+        <h3 className="text-center my-5 ">Iniciar Sesión</h3>
+        
+        <Form.Group className="mt-5 mb-3 container">
           <Form.Control
             placeholder="Ingrese un email"
             {...register("email", {
@@ -73,7 +77,7 @@ const Login = ({ setUsuarioLogueado }) => {
             {errors.email?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-2 container">
+        <Form.Group className="mb-5 container">
           <Form.Control
             type="password"
             placeholder="Ingrese un password"
@@ -102,14 +106,20 @@ const Login = ({ setUsuarioLogueado }) => {
             Iniciar Sesión
           </Button>
           <button
-            className="btn btn-danger btn-sm mt-2 btnRegistrarse"
+            className="btn btn-danger btn-sm my-3 btnRegistrarse"
             type="button"
             onClick={() => navigate("/Registro")}
           >
             ¿No estás registrado?
           </button>
         </div>
+        </div>
+        <div className="col-lg-6 col-md-6 text-center">
+          <img src={bannerVertical } alt="imagen banner" className="divImg" />
+        </div>
+        </div>
       </Form>
+
     </div>
   );
 };

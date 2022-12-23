@@ -1,3 +1,45 @@
 .btnRegistrarse{
     width: 10rem;
 }
+
+.formulario2{ 
+    
+    color: white;
+    width: 50%;
+    height: fit-content;
+    padding: 20px 10px 20px 10px;
+    border-radius: 25px;
+    box-shadow: 2px 4px 10px 2px rgb(78, 78, 78);
+    
+
+
+}
+
+
+
+.divImg{
+    width: 20em;
+    height: 35em;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+
+@media all and (max-width:756px){
+    .divImg{
+        display: none;
+    }
+
+    .formulario2{
+        width: 90%;
+    }
+}
+
+@media all and (min-width:756px) and (max-width:991px){
+
+    .formulario2{
+        width: 90%;
+    height: fit-content;
+    }
+
+}

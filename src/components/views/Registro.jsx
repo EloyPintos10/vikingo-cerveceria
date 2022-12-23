@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import { crearUsuarioAPI } from '../helpers/queriesRegistro';
 import "../../css/registro.css"
 import emailjs from "emailjs-com"
-
+import bannerVertical from "../common/img/bannerVertical.png"
 const Registro = ({setUsuarioLogueado}) => {
     const navigate = useNavigate();
 
@@ -68,9 +68,12 @@ const Registro = ({setUsuarioLogueado}) => {
     return (
         <div>
       
-          <Form onSubmit={handleSubmit(onSubmit)}  className="container formulario mt-5" id='fondoCrear'>
-            <h3 className="text-center mb-4">Registro</h3>
-            <Form.Group className="mb-2 container">
+          <Form onSubmit={handleSubmit(onSubmit)}  className="container formulario2 mt-5" id='fondoCrear'>
+
+            <div className='row'>
+              <div className='col-lg-6 col-md-6'>
+              <h3 className="text-center my-5">Registrate!</h3>
+            <Form.Group className="mb-4 container">
               <Form.Control
                 type="text"
                 placeholder="Ingrese un nombre de usuario"
@@ -94,7 +97,7 @@ const Registro = ({setUsuarioLogueado}) => {
                 {errors.nombre?.message}
               </Form.Text>
             </Form.Group>
-            <Form.Group className="mb-2 container">
+            <Form.Group className="mb-4 container">
               <Form.Control
                 placeholder="Ingrese un email"
                 {...register("email", {
@@ -110,7 +113,7 @@ const Registro = ({setUsuarioLogueado}) => {
                 {errors.email?.message}
               </Form.Text>
             </Form.Group>
-            <Form.Group className="mb-2 container">
+            <Form.Group className="mb-4 container">
               <Form.Control
                 type="password"
                 placeholder="Ingrese un password"
@@ -134,19 +137,25 @@ const Registro = ({setUsuarioLogueado}) => {
             </Form.Group>
             <div className="justify-content-center d-grid">
               <Button
-                className="btn btn-dark btn-lg btn-block mb-2 btnRegistrarse"
+                className="btn btn-dark btn-lg btn-block mt-2 btnRegistrarse"
                 type="submit"
               >
                 Registrarse
               </Button>
               <button
-                className="btn btn-danger btn-sm mt-2 btnRegistrarse"
+                className="btn btn-danger btn-sm mt-4 btnRegistrarse"
                 type="button"
                 onClick={() => navigate("/login")}
               >
                 ¿Ya estas registrado?
               </button>
             </div>
+              </div>
+              <div className='col-lg-6 col-md-6 text-center'>
+                <img src={bannerVertical} alt="banner" className='divImg' />
+              </div>
+            </div>
+            
           </Form>
         
         </div>

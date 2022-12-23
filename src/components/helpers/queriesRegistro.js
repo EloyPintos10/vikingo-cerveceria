@@ -16,13 +16,13 @@ export const consultarUserAPI = async () => {
 
 
 
-export const crearUsuarioAPI = async (usuario) => {
+export const crearUsuarioAPI = async (usuario, token) => {
     try {
       const respuesta = await fetch(URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-         // "x-token": token,
+          "x-token": token,
         },
         body: JSON.stringify(usuario),
 
@@ -60,14 +60,14 @@ export const crearUsuarioAPI = async (usuario) => {
   };
 
 
-  export const borrarUsuarioAPI = async (id) => {
+  export const borrarUsuarioAPI = async (id, token) => {
     // console.log(URL)
     try {
       const respuesta = await fetch(URL + "/" + id, {
         method: "DELETE",
         headers: {
           //  envio el token en el header personalizado
-          //"x-token": token,
+          "x-token": token,
         },
       });
       return respuesta;
