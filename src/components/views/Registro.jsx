@@ -68,7 +68,7 @@ const Registro = ({setUsuarioLogueado}) => {
     return (
         <div>
       
-          <Form onSubmit={handleSubmit(onSubmit)}  className="container formulario2 mt-5" id='fondoCrear'>
+          <Form onSubmit={handleSubmit(onSubmit)}  className="container formulario2 my-5" id='fondoCrear'>
 
             <div className='row'>
               <div className='col-lg-6 col-md-6'>

@@ -51,4 +51,29 @@
         text-decoration: none;
         color: black;}
     
-    
+    .logoAnimado{
+        width: 15em;
+        height: 10em;
+        object-fit: cover;
+        padding: 0px;
+    }
+
+
+    @media all and (max-width:756px){
+        .logoAnimado{
+            width: 7em;
+            height: 12em;
+            object-fit: cover;
+            padding: 0px;
+        }
+    }
+
+    @media all and (min-width:756px) and (max-width:991px){
+        .logoAnimado{
+            width: 9em;
+            height: 13em;
+            object-fit: cover;
+            padding: 0px;
+        }
+
+    }

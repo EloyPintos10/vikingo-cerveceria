@@ -52,7 +52,7 @@ const Login = ({ setUsuarioLogueado }) => {
     <div>
       <Form
         onSubmit={handleSubmit(onSubmit)}
-        className="container formulario2 mt-5"
+        className="container formulario2 my-5"
         id="fondoCrear"
       >
         <div className="row justify-content-center">

@@ -7,16 +7,16 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import "../../css/inicio.css";
-
+import logoAnimado from "../common/img/logoAnimado2.gif"
 
 const Menu = () => {
     return (
         <div>
              
       {[false].map((expand) => (
-        <Navbar key={expand} bg="black" expand={expand} className="mb-3 p-4">
+        <Navbar key={expand} bg="black" expand={expand} className="mb-3 p-2">
           <Container fluid >
-            <Navbar.Brand className='text-light tuclase ' href="#">RAGNAR INDUMENTARIA</Navbar.Brand>
+            <Navbar.Brand className='text-light  ' href="#"><img src={logoAnimado} alt="logo" className='logoAnimado' /></Navbar.Brand>
             <Navbar.Toggle className='bg-light' aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas 
               id={`offcanvasNavbar-expand-${expand}`}
