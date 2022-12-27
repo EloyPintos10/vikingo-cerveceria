@@ -19,6 +19,7 @@ const Login = ({ setUsuarioLogueado }) => {
         (usuario) => usuario.email === datos.email
       );
       datos.perfil = encontrarUsuario.perfil;
+      datos.nombre = encontrarUsuario.nombre
       if (encontrarUsuario) {
         if (encontrarUsuario.password === datos.password) {
           Swal.fire(
@@ -31,7 +32,7 @@ const Login = ({ setUsuarioLogueado }) => {
             JSON.stringify(datos, datos.perfil)
           );
           setUsuarioLogueado(datos, datos.perfil);
-          navigate("/inicio");
+          navigate("/");
         } else {
           Swal.fire(
             "Error",
@@ -65,12 +66,12 @@ const Login = ({ setUsuarioLogueado }) => {
           <Form.Control
             placeholder="Ingrese un email"
             {...register("email", {
-              required: "Debe ingresar un email",
+              required: "Debe ingresar un usuario",
               pattern: {
                 value:
                   /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
                 message: "Debe ingresar un formato valido",
-              },
+              }
             })}
           />
           <Form.Text className="text-danger mb-2">

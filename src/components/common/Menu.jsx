@@ -6,10 +6,13 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import { Link, NavLink } from 'react-router-dom';
 import "../../css/inicio.css";
 import logoAnimado from "../common/img/logoAnimado2.gif"
 
-const Menu = () => {
+const Menu = ({usuarioLogueado}) => {
+
+  console.log(usuarioLogueado)
     return (
         <div>
              
@@ -25,13 +28,13 @@ const Menu = () => {
             >
               <Offcanvas.Header  closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                 Ragnar
+                 Hola {usuarioLogueado.nombre}.!
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Inicio</Nav.Link>
-                  <Nav.Link href="#action2">Productos</Nav.Link>
+                  <NavLink to="/" className="nav-item nav-link">Inicio</NavLink>
+                  <NavLink to="#action2" className="nav-item nav-link">Productos</NavLink>
                   <NavDropdown
                     title="Productos"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
@@ -59,6 +62,10 @@ const Menu = () => {
                   />
                   <Button variant="outline-success">Search</Button>
                 </Form>
+                <div className='d-flex text-center'>
+                  <Link to="/login" className='btn btn-primary me-2 mt-3'>Iniciar Sesión</Link>
+                  <Link to="/registro" className='btn btn-primary ms-2 mt-3'>Registrarse</Link>
+                </div>
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
