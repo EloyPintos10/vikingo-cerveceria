@@ -6,12 +6,31 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import { Link, NavLink } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import "../../css/inicio.css";
 import logoAnimado from "../common/img/logoAnimado2.gif"
 
-const Menu = ({usuarioLogueado}) => {
- 
+const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
+  const navegacion = useNavigate()
+  const logout = ()=>{
+    localStorage.removeItem('tokenRagnar');
+    setUsuarioLogueado({});
+    navegacion('/')
+  }
+
+const redireccion = ()=>{
+  if(usuarioLogueado.perfil === "admin"){
+    navegacion ("/administrar")
+  }else {
+    Swal.fire(
+      "ACCESO NO AUTORIZADO",
+      `No puedes acceder como administrador`,
+      "error"
+    );
+  }
+}
+
     return (
         <div>
              
@@ -61,10 +80,42 @@ const Menu = ({usuarioLogueado}) => {
                   />
                   <Button variant="outline-success">Search</Button>
                 </Form>
-                <div className='d-flex text-center'>
-                  <Link to="/login" className='btn btn-primary me-2 mt-3'>Iniciar Sesión</Link>
-                  <Link to="/registro" className='btn btn-primary ms-2 mt-3'>Registrarse</Link>
+                {usuarioLogueado.nombre ?(
+                  
+                  <>
+                 
+
+                    
+                 <div className='d-flex text-center'>
+                  
+                    
+                  <Button to="/administrar" className='btn btn-primary me-2 mt-3' onClick={redireccion}>Administrador</Button>
+                    
+                   
+                <Button className='btn btn-danger me-2 mt-3' onClick={logout}>
+                  Cerrar Sesión
+                </Button>
+                  
                 </div>
+                  
+
+                
+              </>
+            ) : (
+              <div className='d-flex text-center'>
+              
+              
+              <Link to="/login" className='btn btn-primary ms-2 mt-3'>Iniciar Sesión</Link>
+              <Link to="/registro" className='btn btn-primary ms-2 mt-3'>Registrarse</Link>
+            </div>
+            )}
+                
+               
+
+
+
+
+      
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
@@ -74,5 +125,6 @@ const Menu = ({usuarioLogueado}) => {
         </div>
     );
 };
+
 
 export default Menu;

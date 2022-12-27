@@ -42,7 +42,7 @@ const borrarProducto = ()=>{
         <Button className='btn btn-danger mb-2' onClick={borrarProducto}>
           Borrar
         </Button>
-        <Link to={`/EditarProducto/${id}`} className='btn btn-success'>Editar</Link>
+        <Link to={`/administrar/editar/${id}`} className='btn btn-success'>Editar</Link>
         </div>
       </td>
     </tr>

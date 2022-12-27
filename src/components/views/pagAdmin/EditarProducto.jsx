@@ -41,7 +41,7 @@ const EditarProducto = () => {
           "success"
         );
         //redireccion a la ruta del administrador
-        navegacion("/administrador");
+        navegacion("/administrar");
       } else {
        Swal.fire(
         "Error al editar el producto",

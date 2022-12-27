@@ -43,6 +43,13 @@
       "password": "pintose10",
       "perfil": "cliente",
       "id": 3
+    },
+    {
+      "nombre": "Majo",
+      "email": "ragnar@hotmail.com",
+      "password": "Pintose1542",
+      "perfil": "admin",
+      "id": 4
     }
   ]
 }
