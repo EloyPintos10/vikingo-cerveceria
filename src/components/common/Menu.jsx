@@ -11,8 +11,7 @@ import "../../css/inicio.css";
 import logoAnimado from "../common/img/logoAnimado2.gif"
 
 const Menu = ({usuarioLogueado}) => {
-
-  console.log(usuarioLogueado)
+ 
     return (
         <div>
              
