@@ -41,6 +41,14 @@ function App() {
       path="/login"
       element={<Login setUsuarioLogueado={setUsuarioLogueado}></Login>}
     ></Route>
+<Route
+          exact
+          path="/registro"
+          element={
+            <Registro setUsuarioLogueado={setUsuarioLogueado}></Registro>
+          }
+        ></Route>
+
     {/* aqui quiero las rutas protegidas */}
     <Route
       path="/Administrar/*"

@@ -52,7 +52,7 @@ const Registro = ({setUsuarioLogueado}) => {
               //actualizar el state usuarioLogueado
                setUsuarioLogueado(datos)
               // redireccionamos
-              navigate("/inicio");
+              navigate("/");
           } else {
             Swal.fire(
               `Hubo un error inesperado`,

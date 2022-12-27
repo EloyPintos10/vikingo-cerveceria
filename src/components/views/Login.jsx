@@ -109,7 +109,7 @@ const Login = ({ setUsuarioLogueado }) => {
           <button
             className="btn btn-danger btn-sm my-3 btnRegistrarse"
             type="button"
-            onClick={() => navigate("/Registro")}
+            onClick={() => navigate("/registro")}
           >
             ¿No estás registrado?
           </button>
