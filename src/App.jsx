@@ -14,6 +14,7 @@ import RutasProtegidas from './components/routes/RutasProtegidas';
 import "bootstrap/dist/css/bootstrap.min.css";
 import Login from './components/views/Login';
 import { useState } from 'react';
+import Pedidos from './components/views/Pedidos';
 
 function App() {
 
@@ -33,7 +34,7 @@ function App() {
     <Route exact path="/" element={<Inicio></Inicio>}></Route>
     <Route
       exact
-      path="/detalle-Producto/:id"
+      path="/detalleProducto/:id"
       element={<DetalleProducto></DetalleProducto>}
     ></Route>
     <Route
@@ -46,6 +47,13 @@ function App() {
           path="/registro"
           element={
             <Registro setUsuarioLogueado={setUsuarioLogueado}></Registro>
+          }
+        ></Route>
+<Route
+          exact
+          path="/pedidos/:id"
+          element={
+            <Pedidos setUsuarioLogueado={setUsuarioLogueado}></Pedidos>
           }
         ></Route>
 

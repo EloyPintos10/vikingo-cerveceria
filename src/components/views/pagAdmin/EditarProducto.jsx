@@ -32,7 +32,7 @@ const EditarProducto = () => {
     console.log(datos);    
     
     // busco el token de localstorage y lo envio
-    // const token = JSON.parse(localStorage.getItem('tokenRagnar')).token|| null
+    const token = JSON.parse(localStorage.getItem('tokenRagnar')).token|| null
     editarProductoAPI(id, datos).then((respuesta) => {
       if (respuesta.status === 200) {
         Swal.fire(

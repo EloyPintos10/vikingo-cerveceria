@@ -19,8 +19,8 @@ const CardProductoInicio = ({producto}) => {
           ${precio}
         </Card.Text>
           </Link>
+        <Link to={`/pedidos/${id}`} className="btn btn-success">Agregar al carrito</Link>
         </div>
-        
       </Col>
            </div>
     );
