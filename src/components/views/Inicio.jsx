@@ -17,14 +17,14 @@ const Inicio = () => {
         <>
         <DataStore></DataStore>
         <div className='text-center'>
-            <h1 className='fw-bold tuclase2'>PRODUCTOS</h1>
+            <h1 className='fw-bold '>PRODUCTOS</h1>
         </div>
 
 <section id="mysection">
 
 <article>
 
-        <Row xs={1} md={2} lg={3} >
+        <Row xs={1} md={2} lg={4} >
           {productos.map((producto) => (
             <CardProductoInicio
               key={producto.id}

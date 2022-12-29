@@ -1,10 +1,13 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import { Card, Col } from "react-bootstrap";
+
+
 import { SlHandbag } from "react-icons/sl";
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
-import DataStore from './DataStore';
+
+import Card from 'react-bootstrap/Card';
+import { Container } from 'react-bootstrap';
+
 
 
 
@@ -20,21 +23,26 @@ const CardProductoInicio = ({producto}) => {
 
 
     return (
-         
-        <div>
+      
+        <>
+        
 
          
              
-      <Col className="d-flex justify-content-center">
-        <div className="tarjetas">
+     
 
-          <Link className="tituloscard ">
-            <img src={imagen} className="imgTarjetas"/>
-          <a className='d-flex justify-content-center compra'>
-      
+        {/*card productos nuevos*/}
+        <div className='d-flex justify-content-center mb-4'>
+      <Card  style={{ width: '21rem' }}>
+      <Card.Img  src={imagen} className="imgTarjetas" />
+      <Card.Body>
+      <Card.Title className="p-3 text-center">{nombreProducto}</Card.Title>
+        
+        <a className='d-flex justify-content-center compra'>
         <DropdownButton className='mt-3' id="dropdown-item-button" title={title  
         }  >
-       
+
+
           
     
 
@@ -63,15 +71,14 @@ const CardProductoInicio = ({producto}) => {
       
            
     </DropdownButton>
+    </a>
+       
+      </Card.Body>
+    </Card>
+    </div>
+         
           
-          </a>
-
-            <Card.Title className="p-3 text-center">{nombreProducto}</Card.Title>
-          </Link>
-        </div>
-        
-      </Col>
-           </div>
+    </> 
     );
 };
 
