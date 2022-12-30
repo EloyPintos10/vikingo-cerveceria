@@ -17,7 +17,7 @@ const DataStore = () => {
         </div>
         <div className='text-center'>
             <IoCardSharp className='IconsCard'/>
-            <h5> 3 Y 6 CUPTAS SIN INTERÉS</h5>
+            <h5> 3 Y 6 CUOTAS SIN INTERÉS</h5>
         </div>
         <div className='text-center'>
            <BsWhatsapp className='IconsWhastsapp'/>
