@@ -1,51 +1,30 @@
 /* CSS NAV*/
 
-.tuclase {
-    text-align: left; 
-    font-family: Arial Black; 
-    font-weight: bold; 
-    font-size: 30px; 
-    color: #fff; 
-    text-shadow:  -2px 0 #4ae6e9, 0 1px #4ae6e9, 1px 0 #141619, 0 -1px #4ae6e9;
-    }
-.tuclase2{
-   
-    font-family: Arial Black; 
-    font-weight: bold; 
-   
-    color: rgb(8, 8, 8); 
-    text-shadow:  -2px 0 #4ae6e9, 0 1px #4ae6e9, 1px 0 #141619, 0 -1px #4ae6e9;
-    }
+
+
 
     .tarjetas{
-        width: 17rem;
+        flex-basis: fit-content;
        justify-content: center;
         margin-top: 25px;
-        box-shadow: 0px 5px 10px 0px rgb(26, 26, 26);
-        transition: 200ms;
-        border-radius: 15px;
+        box-shadow: 0px 5px 2px 0px rgb(26, 26, 26);
+       
+        
         background-color: white;
        
     }
-    .tarjetas:hover {
-        transform: scale(0.9);
-        transition: all 0.5s ease;
-      }
+    
     
     .imgTarjetas{
-    width: 100%;
+    width: 21rem;
     height:25rem;
-    object-fit: unset;
-    border-top-right-radius: 15px;
-    border-top-left-radius: 15px;
+   
+    
     
     }
     
-    .tarjetas:hover{
-        transition: ease;
-        text-decoration: none;
-        color: black;
-    }
+    
+    
     .tituloscard:hover{
      
         text-decoration: none;
@@ -77,3 +56,108 @@
         }
 
     }
+        .iconoTarjetas{
+          margin-top: 1rem;
+            width: 4rem;
+            height: 2rem;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem
+        }
+    
+        .dropdown-menu{
+            --bs-dropdown-item-padding-y: 1.25rem;
+            --bs-dropdown-min-width: 14rem;
+            
+            margin-left: -120%;
+            --bs-dropdown-padding-y: 2.5rem;
+        
+           
+        }
+
+        .inputTarjetas{
+            width: 12rem;
+            margin-left: 1rem;
+        }
+
+        .dropdown-toggle::after {
+            border-top: 0.0em solid;
+        }
+
+        .btn {
+            --bs-btn-padding-x: -0.25rem
+            --bs-btn-font-size: 0rem;
+            --bs-btn-border-width: 0px;
+            --bs-btn-border-radius: 3.375rem;
+            --bs-btn-font-size: 0rem
+        }
+        .btnAgregarCarrito{
+            
+            display: flex;
+            justify-content: center;
+            
+        }
+
+        
+      
+        /*EFECTO BTN AGREGAR AL CARRITO*/
+            .css-button-sliding-to-left--sky {
+                min-width: 130px;
+                height: 40px;
+                color: #fff;
+                padding: 5px 10px;
+                font-weight: bold;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                position: relative;
+                display: inline-block;
+                outline: none;
+                border-radius: 5px;
+                z-index: 0;
+                background: #fff;
+                overflow: hidden;
+                border: 2px solid blue;
+                color: blue;
+              }
+              .css-button-sliding-to-left--sky:hover {
+                color: #fff;
+              }
+              .css-button-sliding-to-left--sky:hover:after {
+                width: 100%;
+              }
+              .css-button-sliding-to-left--sky:after {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                transition: all 0.3s ease;
+                left: 0;
+                top: 0;
+                width: 0;
+                height: 100%;
+                background: blue;
+              }
+               .DataStore{
+                display: flex;
+                justify-content: space-around
+
+              
+               }
+               .Iconstruck{
+                width: 3rem;
+                height: 3rem;
+                
+               }
+
+               .IconsCard{
+                width: 3rem;
+                height: 3rem;
+               }
+
+               .IconsWhastsapp{
+                width: 3rem;
+                height: 3rem;
+
+               }
+        
+
+        

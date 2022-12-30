@@ -1,8 +1,9 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
-import CardProductoInicio from './pagInicio/CardProductoInicio';
+import CardProductoInicio from './pagInicio/cardProductoInicio';
 import { useEffect, useState } from "react";
 import { consultarAPI } from '../helpers/queriesAdmin';
+import DataStore from './pagInicio/DataStore';
 
 const Inicio = () => {
     const [productos, setProductos] = useState([]);
@@ -14,8 +15,9 @@ const Inicio = () => {
     },[])
     return (
         <>
+        <DataStore></DataStore>
         <div className='text-center'>
-            <h1 className='fw-bold tuclase2'>PRODUCTOS</h1>
+            <h1 className='fw-bold '>PRODUCTOS</h1>
         </div>
 
 <section id="mysection">

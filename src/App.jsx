@@ -15,7 +15,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Login from './components/views/Login';
 import { useState } from 'react';
 import Pedidos from './components/views/Pedidos';
-
+import { SlHandbag } from "react-icons/sl";
 function App() {
 
   const usuario = JSON.parse(localStorage.getItem("tokenRagnar")) || {};
