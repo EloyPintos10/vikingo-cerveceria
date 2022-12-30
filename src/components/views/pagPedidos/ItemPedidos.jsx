@@ -6,7 +6,10 @@ import {useForm} from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { crearPedidoAPI } from '../../helpers/queriesPedidos';
 import "../../../css/carrito.css"
-const ItemPedidos = ({pedidos, setPedidos}) => {
+const ItemPedidos = ({pedido, setPedidos}) => {
+
+  const {id, nombreProducto, categoria, imagen, precio} = {...pedido} 
+
     const navegacion = useNavigate();
     const { handleSubmit, formState:{errors}, reset} = useForm();
 
@@ -30,20 +33,20 @@ const ItemPedidos = ({pedidos, setPedidos}) => {
         })
       }
 
-    console.log(pedidos)
+    console.log(pedido)
     return (
         <Form onSubmit={handleSubmit(onSubmit)}>
 
         <div className='d-flex my-5 container'>
 
         <div>
-            <img src={pedidos.dato.imagen} alt="imagen"  className='pedidoImg ' />
+            <img src={imagen} alt="imagen"  className='pedidoImg ' />
 
         </div>
         <div className='text-center p-5'>
             <h2>DETALLE DE TU COMPRA</h2>
-            <h4>{pedidos.dato.nombreProducto}</h4>
-            <p>${pedidos.dato.precio}</p>
+            <h4>{nombreProducto}</h4>
+            <p>${precio}</p>
             <Button type='submit'>Comprar</Button>
         </div>
         </div>

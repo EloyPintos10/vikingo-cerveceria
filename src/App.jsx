@@ -53,7 +53,7 @@ function App() {
           exact
           path="/pedidos/:id"
           element={
-            <Pedidos setUsuarioLogueado={setUsuarioLogueado}></Pedidos>
+            <Pedidos usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Pedidos>
           }
         ></Route>
 

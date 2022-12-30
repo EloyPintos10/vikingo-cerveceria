@@ -52,8 +52,14 @@
       "id": 4
     }
   ],
-  "pedidos":[
-
-   
+  "pedidos": [
+    {
+      "imagen": "https://cf.shopee.com.mx/file/0abea974dbb16231413b30afbf6f03e5",
+      "producto": "Jeans Elastizado azul",
+      "precio": 6500,
+      "talle": "jeans",
+      "perfil": "cliente",
+      "id": 1
+    }
   ]
 }
