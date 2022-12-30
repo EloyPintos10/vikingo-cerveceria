@@ -1,9 +1,11 @@
 import React from 'react';
-import { Row } from 'react-bootstrap';
+import { Container, Row } from 'react-bootstrap';
 import CardProductoInicio from './pagInicio/cardProductoInicio';
 import { useEffect, useState } from "react";
 import { consultarAPI } from '../helpers/queriesAdmin';
 import DataStore from './pagInicio/DataStore';
+import "../../css/inicio.css"
+
 
 const Inicio = () => {
     const [productos, setProductos] = useState([]);
@@ -22,7 +24,7 @@ const Inicio = () => {
 
 <section id="mysection">
 
-<article>
+<Container>
 
         <Row xs={1} md={2} lg={4} >
           {productos.map((producto) => (
@@ -34,7 +36,9 @@ const Inicio = () => {
             ></CardProductoInicio>
           ))}
         </Row>
-</article>
+</Container>
+
+
 </section>
 </>
     );

@@ -1,8 +1,5 @@
 /* CSS NAV*/
 
-
-
-
     .tarjetas{
         flex-basis: fit-content;
        justify-content: center;
@@ -85,11 +82,18 @@
         }
 
         .btn {
-            --bs-btn-padding-x: -0.25rem
-            --bs-btn-font-size: 0rem;
+            --bs-btn-padding-x: 0rem;           
             --bs-btn-border-width: 0px;
             --bs-btn-border-radius: 3.375rem;
-            --bs-btn-font-size: 0rem
+            --bs-btn-font-size: 0rem;
+           
+        }
+
+        .boton{
+            --bs-btn-padding-x: -0.25rem;           
+            --bs-btn-border-width: 0px;
+            --bs-btn-border-radius: 3.375rem;
+            --bs-btn-font-size: 0rem;
         }
         .btnAgregarCarrito{
             
