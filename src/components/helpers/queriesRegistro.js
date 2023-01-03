@@ -6,7 +6,7 @@ export const consultarUserAPI = async () => {
       const respuesta = await fetch(URL);
       const listaUsuarios = await respuesta.json();
       return listaUsuarios;
-      //agregar aqui la logica para buscar el usuario por mail y pass
+      //agregar aqui la logica para buscar el usuario por mail y password
       // si lo encuentro retorno el objeto
       //caso contrario retorno null u objeto vacio
     } catch (e) {
@@ -15,13 +15,29 @@ export const consultarUserAPI = async () => {
   };
 
 
+  export const obtenerUsuarioAPI = async (id) => {
+    // console.log(URL)
+    try {
+      const respuesta = await fetch(URL + "/" + id);
+      const producto = {
+        dato: await respuesta.json(),
+        status: respuesta.status,
+      };
+      return producto;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  };
 
-export const crearUsuarioAPI = async (usuario) => {
+
+export const crearUsuarioAPI = async (usuario, token) => {
     try {
       const respuesta = await fetch(URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "x-token": token,
         },
         body: JSON.stringify(usuario),
 
@@ -40,6 +56,7 @@ export const crearUsuarioAPI = async (usuario) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+         
         },
         body: JSON.stringify(usuario),
       });
@@ -48,7 +65,7 @@ export const crearUsuarioAPI = async (usuario) => {
         status: respuesta.status,
         mensaje: datos.mensaje,
         nombre: datos.nombre,
-        // token: datos.token,
+        token: datos.token,
         uid: datos.uid,
       };
     } catch (error) {
@@ -58,14 +75,14 @@ export const crearUsuarioAPI = async (usuario) => {
   };
 
 
-  export const borrarUsuarioAPI = async (id) => {
+  export const borrarUsuarioAPI = async (id, token) => {
     // console.log(URL)
     try {
       const respuesta = await fetch(URL + "/" + id, {
         method: "DELETE",
         headers: {
-          // envio el token en el header personalizado
-          // "x-token": token,
+          //  envio el token en el header personalizado
+          "x-token": token,
         },
       });
       return respuesta;

@@ -64,7 +64,7 @@ const Administrador = () => {
        <div className='text-center'>
 <div className='d-flex justify-content-between'>
           <p className='titulosadmin'>LISTADO PRODUCTOS</p>
-          <Link to="/CrearProducto"><BsFillPlusCircleFill className='fs-2'/></Link>          
+          <Link to="/administrar/crear"><BsFillPlusCircleFill className='fs-2'/></Link>          
           
 </div>
         <Table responsive bordered className='fondoTabla'>
@@ -90,7 +90,7 @@ const Administrador = () => {
        <div className='text-center my-4'>
 <div className='d-flex justify-content-between'>
           <p className='titulosadmin'>LISTADO USUARIOS</p>
-          <Link to="/Registro"><BsFillPlusCircleFill className='fs-2'/></Link>
+          <Link to="/registro"><BsFillPlusCircleFill className='fs-2'/></Link>
 
 </div>
         <Table responsive bordered className='fondoTabla'>

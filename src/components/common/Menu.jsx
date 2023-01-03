@@ -6,17 +6,38 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import Swal from 'sweetalert2';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import "../../css/inicio.css";
+import logoAnimado from "../common/img/logoAnimado2.gif"
 
+const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
+  const navegacion = useNavigate()
+  const logout = ()=>{
+    localStorage.removeItem('tokenRagnar');
+    setUsuarioLogueado({});
+    navegacion('/')
+  }
 
-const Menu = () => {
+const redireccion = ()=>{
+  if(usuarioLogueado.perfil === "admin"){
+    navegacion ("/administrar")
+  }else {
+    Swal.fire(
+      "ACCESO NO AUTORIZADO",
+      `No puedes acceder como administrador`,
+      "error"
+    );
+  }
+}
+
     return (
         <div>
              
       {[false].map((expand) => (
-        <Navbar key={expand} bg="black" expand={expand} className="mb-3 p-4">
+        <Navbar key={expand} bg="black" expand={expand} className="mb-3 p-2">
           <Container fluid >
-            <Navbar.Brand className='text-light tuclase ' href="#">RAGNAR INDUMENTARIA</Navbar.Brand>
+            <Navbar.Brand className='text-light  ' href="#"><img src={logoAnimado} alt="logo" className='logoAnimado' /></Navbar.Brand>
             <Navbar.Toggle className='bg-light' aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas 
               id={`offcanvasNavbar-expand-${expand}`}
@@ -25,13 +46,13 @@ const Menu = () => {
             >
               <Offcanvas.Header  closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                 Ragnar
+                 Hola {usuarioLogueado.nombre}.!
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
                 <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <Nav.Link href="#action1">Inicio</Nav.Link>
-                  <Nav.Link href="#action2">Productos</Nav.Link>
+                  <NavLink to="/" className="nav-item nav-link">Inicio</NavLink>
+                  <NavLink to="#action2" className="nav-item nav-link">Productos</NavLink>
                   <NavDropdown
                     title="Productos"
                     id={`offcanvasNavbarDropdown-expand-${expand}`}
@@ -59,6 +80,42 @@ const Menu = () => {
                   />
                   <Button variant="outline-success">Search</Button>
                 </Form>
+                {usuarioLogueado.nombre ?(
+                  
+                  <>
+                 
+
+                    
+                 <div className='d-flex text-center'>
+                  
+                    
+                  <Button to="/administrar" className='btn btn-primary me-2 mt-3' onClick={redireccion}>Administrador</Button>
+                    
+                   
+                <Button className='btn btn-danger me-2 mt-3' onClick={logout}>
+                  Cerrar Sesión
+                </Button>
+                  
+                </div>
+                  
+
+                
+              </>
+            ) : (
+              <div className='d-flex text-center'>
+              
+              
+              <Link to="/login" className='btn btn-primary ms-2 mt-3'>Iniciar Sesión</Link>
+              <Link to="/registro" className='btn btn-primary ms-2 mt-3'>Registrarse</Link>
+            </div>
+            )}
+                
+               
+
+
+
+
+      
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>
@@ -68,5 +125,6 @@ const Menu = () => {
         </div>
     );
 };
+
 
 export default Menu;

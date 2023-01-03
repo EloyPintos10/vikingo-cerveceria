@@ -29,20 +29,25 @@
       "id": 4
     }
   ],
-  "usuarios": [
+  "usuarios": [    
     {
-      "nombre": "eloy",
-      "email": "ragnar@hotmail.com",
-      "password": "Pintose1542",
-      "perfil": "admin",
-      "id": 2
-    },
-    {
-      "nombre": "majo",
-      "email": "majoaguero20@hotmail.com",
-      "password": "fdghdfhfghdhdgfhdfgdg",
+      "nombre": "Alvaro",
+      "apellido": "Perez",
+      "nombreUsuario": "PerezAlvaro",
+      "email": "eloy_pintos14@hotmail.com",
+      "password": "Pintose10",
       "perfil": "cliente",
       "id": 5
+    }
+  ],
+  "pedidos": [
+    {
+      "imagen": "https://cf.shopee.com.mx/file/0abea974dbb16231413b30afbf6f03e5",
+      "producto": "Jeans Elastizado azul",
+      "precio": 6500,
+      "talle": "jeans",
+      "perfil": "cliente",
+      "id": 1
     }
   ]
 }
