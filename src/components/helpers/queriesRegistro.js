@@ -76,6 +76,22 @@ export const crearUsuarioAPI = async (usuario) => {
   };
 
 
-
+  export const editarUsuarioAPI = async (id, usuario) => {
+    // console.log(URL)
+    try {
+      const respuesta = await fetch(URL + "/" + id, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          // "x-token": token,
+        },
+        body: JSON.stringify(usuario),
+      });
+      return respuesta;
+    } catch (error) {
+      console.log(error);
+      return false;
+    }
+  };
 
   

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row } from 'react-bootstrap';
-import CardProductoInicio from './pagInicio/CardProductoInicio';
+import CardProductoInicio from '../views/pagInicio/cardProductoInicio';
 import { useEffect, useState } from "react";
 import { consultarAPI } from '../helpers/queriesAdmin';
 

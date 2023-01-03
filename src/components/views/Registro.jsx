@@ -86,7 +86,55 @@ const Registro = ({setUsuarioLogueado}) => {
                   },
                   pattern: {
                     value: /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/gim,
-                    message: "Debe ingresar un nombre de usaurio valido",
+                    message: "Debe ingresar un nombre",
+                  },
+                })}
+              />
+              <Form.Text className="text-danger mb-2">
+                {errors.nombre?.message}
+              </Form.Text>
+            </Form.Group>
+            <Form.Group className="mb-2 container">
+              <Form.Control
+                type="text"
+                placeholder="Ingrese un nombre de usuario"
+                {...register("apellido", {
+                  required: "Debe ingresar un nombre de usuario",
+                  minLength: {
+                    value: 3,
+                    message: "El nombre debe tener al menos 3 caracteres",
+                  },
+                  maxLength: {
+                    value: 30,
+                    message: "El nombre no debe tener mas de 30 caracteres",
+                  },
+                  pattern: {
+                    value: /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/gim,
+                    message: "Debe ingresar un nombre de apellido",
+                  },
+                })}
+              />
+              <Form.Text className="text-danger mb-2">
+                {errors.nombre?.message}
+              </Form.Text>
+            </Form.Group>
+            <Form.Group className="mb-2 container">
+              <Form.Control
+                type="text"
+                placeholder="Ingrese un nombre de usuario"
+                {...register("nombreUsuario", {
+                  required: "Debe ingresar un nombre de usuario",
+                  minLength: {
+                    value: 3,
+                    message: "El nombre debe tener al menos 3 caracteres",
+                  },
+                  maxLength: {
+                    value: 30,
+                    message: "El nombre no debe tener mas de 30 caracteres",
+                  },
+                  pattern: {
+                    value: /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/gim,
+                    message: "Debe ingresar un nombre de usuario valido",
                   },
                 })}
               />
