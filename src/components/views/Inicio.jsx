@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { consultarAPI } from '../helpers/queriesAdmin';
 import DataStore from './pagInicio/DataStore';
 import "../../css/inicio.css"
-
+import ShoppingCart from './CarritoCompra/ShoppingCart';
 
 const Inicio = () => {
     const [productos, setProductos] = useState([]);
@@ -37,6 +37,7 @@ const Inicio = () => {
           ))}
         </Row>
 </Container>
+<ShoppingCart productos={productos}></ShoppingCart>
 
 
 </section>
