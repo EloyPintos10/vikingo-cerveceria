@@ -11,7 +11,7 @@ import bannerVertical from "../common/img/bannerVertical.png"
 
 const Registro = ({setUsuarioLogueado}) => {
     const navigate = useNavigate();
-    const { id } = useParams();
+    
     const {
       register,
       handleSubmit,
@@ -26,7 +26,7 @@ const Registro = ({setUsuarioLogueado}) => {
         datos.perfil = "cliente"
       }    
      
-        crearUsuarioAPI(datos).then((respuesta) => {
+        crearUsuarioAPI(datos, datos.perfil).then((respuesta) => {
           if (respuesta.status === 201) {
   
             Swal.fire(
@@ -49,11 +49,11 @@ const Registro = ({setUsuarioLogueado}) => {
            
             
             
-            //guardar la sesion del usuario en localstorage
+            
               localStorage.setItem('tokenRagnar', JSON.stringify(datos));
-              //actualizar el state usuarioLogueado
-               setUsuarioLogueado(datos)
-              // redireccionamos
+             
+               setUsuarioLogueado(datos, datos.perfil)
+           
               navigate("/");
           } else {
             Swal.fire(
@@ -127,7 +127,7 @@ const Registro = ({setUsuarioLogueado}) => {
               <Form.Control
                 type="text"
                 placeholder="Ingrese un nombre de usuario"
-                {...register("nombreUsuario", {
+                {...register("userName", {
                   required: "Debe ingresar un nombre de usuario",
                   minLength: {
                     value: 3,

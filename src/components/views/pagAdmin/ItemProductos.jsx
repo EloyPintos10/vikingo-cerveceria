@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { borrarProductoAPI, consultarAPI } from '../../helpers/queriesAdmin';
 import Swal from 'sweetalert2';
 const itemProductos = ({producto, setProductos}) => {
-    const {id, nombreProducto, categoria, imagen, precio} = {...producto} 
+    const {_id, nombreProducto, categoria, imagen, precio} = {...producto} 
 
 
     
@@ -12,7 +12,7 @@ const itemProductos = ({producto, setProductos}) => {
 const borrarProducto = ()=>{
     // busco el token de localstorage y lo envio
     // const token = JSON.parse(localStorage.getItem('tokenRagnar')).token|| null
-  borrarProductoAPI(id).then((respuesta)=>{
+  borrarProductoAPI(_id).then((respuesta)=>{
     
     // TAREA: agregar la ventana de sweetaler para preguntar si queremos borrar el producto, solo en el caso de la respuesta afirmativa realizar el sieguiente codigo:
     if(respuesta.status === 200){
@@ -30,7 +30,7 @@ const borrarProducto = ()=>{
 }
     return (
         <tr>
-      <td>{id}</td>
+      <td>{_id}</td>
     
       <td>{nombreProducto}</td>
       <td>${precio}</td>
@@ -42,7 +42,7 @@ const borrarProducto = ()=>{
         <Button className='btn btn-danger mb-2' onClick={borrarProducto}>
           Borrar
         </Button>
-        <Link to={`/administrar/editar/${id}`} className='btn btn-success'>Editar</Link>
+        <Link to={`/administrar/editar/${_id}`} className='btn btn-success'>Editar</Link>
         </div>
       </td>
     </tr>

@@ -8,7 +8,7 @@ import { consultarAPI } from '../helpers/queriesAdmin';
 import ItemProductos from './pagAdmin/ItemProductos';
 import { BsFillPlusCircleFill } from "react-icons/bs";
 import { Link } from 'react-router-dom';
-import { consultarUserAPI } from '../helpers/queriesRegistro';
+import { consultarUserAPI } from "../helpers/queriesRegistro";
 import ItemUsuarios from "../views/pagAdmin/ItemUsuarios"
 
 
@@ -41,6 +41,7 @@ const Administrador = () => {
       (respuesta) => {
         //la respuesta es exitosa
         setUsuarios(respuesta);
+        console.log(respuesta)
       },
       (reason) => {
         console.log(reason);
@@ -81,7 +82,7 @@ const Administrador = () => {
       </thead>
       <tbody>        
         {            
-            productos.map((producto)=> <ItemProductos key={producto.id} producto={producto} setProductos={setProductos}></ItemProductos> )
+            productos.map((producto)=> <ItemProductos key={producto._id} producto={producto} setProductos={setProductos}></ItemProductos> )
           }
       </tbody>
     </Table>
@@ -104,9 +105,9 @@ const Administrador = () => {
         </tr>
       </thead>
       <tbody>
-      {            
-            usuarios.map((usuario)=> <ItemUsuarios key={usuario.id} usuario={usuario} setUsuarios={setUsuarios}></ItemUsuarios> )
-          }
+       {            
+            usuarios.map((usuario)=> <ItemUsuarios key={usuario._id} usuario={usuario} setUsuarios={setUsuarios}></ItemUsuarios> )
+          } 
       </tbody>
     </Table>
        </div>

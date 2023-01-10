@@ -11,7 +11,7 @@ const Inicio = () => {
     const [productos, setProductos] = useState([]);
     useEffect(()=>{
         consultarAPI().then((respuesta)=>{
-          //console.log(respuesta)
+          
          setProductos(respuesta);
         })
     },[])

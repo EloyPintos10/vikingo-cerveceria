@@ -7,7 +7,7 @@ import { consultarUserAPI, login } from "../helpers/queriesRegistro";
 import bannerVertical from "../common/img/bannerVertical.png"
 
 
-const Login = ({ setUsuarioLogueado }) => {
+const Login = ({usuarioLogueado, setUsuarioLogueado }) => {
 
  
   const navigate = useNavigate();
@@ -17,41 +17,61 @@ const Login = ({ setUsuarioLogueado }) => {
     formState: { errors },
   } = useForm();
   const onSubmit = (datos) => {
-
-    consultarUserAPI(datos).then((respuesta) => {
-      const encontrarUsuario = respuesta.find(
-        (usuario) => usuario.email === datos.email
-      );
-      datos.perfil = encontrarUsuario.perfil;
-      datos.nombre = encontrarUsuario.nombre
-      if (encontrarUsuario) {
-        if (encontrarUsuario.password === datos.password) {
-          Swal.fire(
-            "Bienvenido",
-            `Gracias por contar con nosotros, ${encontrarUsuario.nombre}`,
-            "success"
-          );
-          localStorage.setItem(
-            "tokenRagnar",
-            JSON.stringify(datos, datos.perfil)
-          );
-          setUsuarioLogueado(datos, datos.perfil);
-          navigate("/");
-        } else {
-          Swal.fire(
-            "Error",
-            `Contraseña incorrecta, vuelva a intentarlo`,
-            "error"
-          );
-        }
+    login(datos).then((respuesta) => {
+      if (respuesta.status === 200) {
+        Swal.fire(
+          "Bienvenido",
+          `Gracias por contar con nosotros, ${respuesta.nombre}`,
+          "success"
+        );
+        localStorage.setItem(
+          "tokenRagnar",
+          JSON.stringify(respuesta)
+        );
+        setUsuarioLogueado(respuesta)
+        navigate("/");
       } else {
         Swal.fire(
-          "Email incorrecto",
-          `No encontramos un email con ese nombre, vuelve a intentarlo`,
+          "Error",
+          `Contraseña o email incorrecto, vuelva a intentarlo`,
           "error"
         );
       }
     });
+    // consultarUserAPI(datos).then((respuesta) => {
+    //   const encontrarUsuario = respuesta.find(
+    //     (usuario) => usuario.email === datos.email
+    //   );
+    //   datos.perfil = encontrarUsuario.perfil;
+    //   datos.nombre = encontrarUsuario.nombre
+    //   if (encontrarUsuario) {
+    //     if (encontrarUsuario.password === datos.password) {
+    //       Swal.fire(
+    //         "Bienvenido",
+    //         `Gracias por contar con nosotros, ${encontrarUsuario.nombre}`,
+    //         "success"
+    //       );
+    //       localStorage.setItem(
+    //         "tokenRagnar",
+    //         JSON.stringify(datos, datos.perfil)
+    //       );
+    //       setUsuarioLogueado(datos, datos.perfil);
+    //       navigate("/");
+    //     } else {
+    //       Swal.fire(
+    //         "Error",
+    //         `Contraseña incorrecta, vuelva a intentarlo`,
+    //         "error"
+    //       );
+    //     }
+    //   } else {
+    //     Swal.fire(
+    //       "Email incorrecto",
+    //       `No encontramos un email con ese nombre, vuelve a intentarlo`,
+    //       "error"
+    //     );
+    //   }
+    // });
   };
   return (
     <div>

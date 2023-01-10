@@ -13,11 +13,11 @@ const EditarProducto = () => {
     setValue,
   } = useForm();
   //buscamos el parametros de la url
-  const { id } = useParams();
+  const { _id } = useParams();
   const navegacion = useNavigate();
 
   useEffect(() => {
-    obtenerProductoAPI(id).then((respuesta) => {
+    obtenerProductoAPI(_id).then((respuesta) => {
       if (respuesta.status === 200) {
         console.log(respuesta);
         setValue("nombreProducto", respuesta.dato.nombreProducto);
@@ -31,9 +31,9 @@ const EditarProducto = () => {
   const onSubmit = (datos) => {
     console.log(datos);    
     
-    // busco el token de localstorage y lo envio
+    
     const token = JSON.parse(localStorage.getItem('tokenRagnar')).token|| null
-    editarProductoAPI(id, datos).then((respuesta) => {
+    editarProductoAPI(_id, datos, token).then((respuesta) => {
       if (respuesta.status === 200) {
         Swal.fire(
           "Producto editado",

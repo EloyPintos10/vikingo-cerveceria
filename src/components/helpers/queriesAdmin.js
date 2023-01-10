@@ -11,10 +11,10 @@ export const consultarAPI = async () => {
       return false;
     }
   };
-  export const obtenerProductoAPI = async (id) => {
+  export const obtenerProductoAPI = async (_id) => {
     // console.log(URL)
     try {
-      const respuesta = await fetch(URL + "/" + id);
+      const respuesta = await fetch(URL + "/" + _id);
       const producto = {
         dato: await respuesta.json(),
         status: respuesta.status,
@@ -26,15 +26,15 @@ export const consultarAPI = async () => {
     }
   };
   
-  export const crearProductoAPI = async (producto) => {
+  export const crearProductoAPI = async (producto, token) => {
     // console.log(URL)
     try {
-      const respuesta = await fetch(URL, {
+      const respuesta = await fetch(URL  , {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           // envio el token en el header personalizado
-          // "x-token": token,
+           "x-token": token,
         },
         body: JSON.stringify(producto),
       });
@@ -44,14 +44,14 @@ export const consultarAPI = async () => {
       return false;
     }
   };
-  export const borrarProductoAPI = async (id) => {
+  export const borrarProductoAPI = async (_id, token) => {
     // console.log(URL)
     try {
-      const respuesta = await fetch(URL + "/" + id, {
+      const respuesta = await fetch(URL + "/" + _id, {
         method: "DELETE",
         headers: {
           // envio el token en el header personalizado
-          // "x-token": token,
+           "x-token": token,
         },
       });
       return respuesta;
@@ -61,14 +61,14 @@ export const consultarAPI = async () => {
     }
   };
   
-  export const editarProductoAPI = async (id, producto) => {
+  export const editarProductoAPI = async (_id, producto, token) => {
     // console.log(URL)
     try {
-      const respuesta = await fetch(URL + "/" + id, {
+      const respuesta = await fetch(URL + "/" + _id, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          // "x-token": token,
+           "x-token": token,
         },
         body: JSON.stringify(producto),
       });

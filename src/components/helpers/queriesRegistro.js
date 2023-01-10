@@ -3,7 +3,7 @@ const URL = process.env.REACT_APP_API_RAGNAR_USER;
 
 export const consultarUserAPI = async () => {
     try {
-      const respuesta = await fetch(URL);
+      const respuesta = await fetch(URL + "/nuevo");
       const listaUsuarios = await respuesta.json();
       return listaUsuarios;
       //agregar aqui la logica para buscar el usuario por mail y password
@@ -15,10 +15,10 @@ export const consultarUserAPI = async () => {
   };
 
 
-  export const obtenerUsuarioAPI = async (id) => {
+  export const obtenerUsuarioAPI = async (_id) => {
     // console.log(URL)
     try {
-      const respuesta = await fetch(URL + "/" + id);
+      const respuesta = await fetch(URL + "/" + _id);
       const producto = {
         dato: await respuesta.json(),
         status: respuesta.status,
@@ -33,11 +33,11 @@ export const consultarUserAPI = async () => {
 
 export const crearUsuarioAPI = async (usuario, token) => {
     try {
-      const respuesta = await fetch(URL, {
+      const respuesta = await fetch(URL + "/nuevo", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-token": token,
+         "x-token": token,
         },
         body: JSON.stringify(usuario),
 
@@ -51,8 +51,8 @@ export const crearUsuarioAPI = async (usuario, token) => {
 
   export const login = async (usuario) => {
     try {
-      console.log(usuario);
-      const respuesta = await fetch(URL, {
+      
+      const respuesta = await fetch(URL + "/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -65,6 +65,7 @@ export const crearUsuarioAPI = async (usuario, token) => {
         status: respuesta.status,
         mensaje: datos.mensaje,
         nombre: datos.nombre,
+        perfil:datos.perfil,
         token: datos.token,
         uid: datos.uid,
       };
@@ -75,10 +76,10 @@ export const crearUsuarioAPI = async (usuario, token) => {
   };
 
 
-  export const borrarUsuarioAPI = async (id, token) => {
+  export const borrarUsuarioAPI = async (_id, token) => {
     // console.log(URL)
     try {
-      const respuesta = await fetch(URL + "/" + id, {
+      const respuesta = await fetch(URL + "/nuevo" + "/"+  _id, {
         method: "DELETE",
         headers: {
           //  envio el token en el header personalizado
@@ -93,14 +94,14 @@ export const crearUsuarioAPI = async (usuario, token) => {
   };
 
 
-  export const editarUsuarioAPI = async (id, usuario) => {
+  export const editarUsuarioAPI = async (_id, token, usuario) => {
     // console.log(URL)
     try {
-      const respuesta = await fetch(URL + "/" + id, {
+      const respuesta = await fetch(URL + "/" + _id, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-          // "x-token": token,
+           //"x-token": token,
         },
         body: JSON.stringify(usuario),
       });
