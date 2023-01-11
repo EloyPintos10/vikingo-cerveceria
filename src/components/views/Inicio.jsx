@@ -6,9 +6,23 @@ import { consultarAPI } from '../helpers/queriesAdmin';
 import DataStore from './pagInicio/DataStore';
 import "../../css/inicio.css"
 import ShoppingCart from './CarritoCompra/ShoppingCart';
+import Header from './CarritoCompra/Header';
+
 
 const Inicio = () => {
+  const [allProducts, setAllProducts] = useState([]);
+  const [total, setTotal] = useState(0);
+  const [countProducts, setCountProducts] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+  
+
+  
+
+
+
     const [productos, setProductos] = useState([]);
+
+
     useEffect(()=>{
         consultarAPI().then((respuesta)=>{
           //console.log(respuesta)
@@ -21,6 +35,17 @@ const Inicio = () => {
         <div className='text-center'>
             <h1 className='fw-bold '>PRODUCTOS</h1>
         </div>
+        <Header 
+        quantity= {quantity}
+        setQuantity= {setQuantity}
+        allProducts={allProducts}
+        setAllProducts={setAllProducts}
+        total={total}
+        setTotal={setTotal}
+        countProducts={countProducts}
+        allCountProducts={setCountProducts}
+        setCountProducts={setCountProducts}
+        ></Header>
 
 <section id="mysection">
 
@@ -32,12 +57,19 @@ const Inicio = () => {
               key={producto.id}
               producto={producto}
               setProductos={setProductos}
+              allProducts={allProducts}
+        setAllProducts={setAllProducts}
+        total={total}
+        setTotal={setTotal}
+        countProducts={countProducts}
+        setCountProducts={setCountProducts}
+        allCountProducts={setCountProducts}
               
             ></CardProductoInicio>
           ))}
         </Row>
 </Container>
-<ShoppingCart productos={productos}></ShoppingCart>
+
 
 
 </section>
