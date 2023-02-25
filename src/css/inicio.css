@@ -165,3 +165,7 @@
         
 
         
+               .nav.imgNav{
+                background-image: url(../components/common/img/Fondo2Nav.png.png);
+                 background-size: cover ;
+             }
