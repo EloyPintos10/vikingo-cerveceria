@@ -37,7 +37,7 @@ const redireccion = ()=>{
       {[false].map((expand) => (
         <Navbar key={expand} expand={expand} className="  fondoprueba">
           <Container fluid >
-            <Navbar.Brand className='text-light  ' href="#"><img src={Logo}  alt="logo" className='logoMenu' /></Navbar.Brand>
+            <Navbar.Brand className='text-light  ' href="#"><img   alt="logo" className='logoMenu' /></Navbar.Brand>
             <Navbar.Toggle className='bg-light' aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas 
               id={`offcanvasNavbar-expand-${expand}`}

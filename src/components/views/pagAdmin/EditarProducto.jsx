@@ -27,6 +27,7 @@ const EditarProducto = () => {
         setValue("nombreProducto", respuesta.dato.nombreProducto);
         setValue("precio", respuesta.dato.precio);
         setValue("imagen", respuesta.dato.imagen);
+        setValue("imagen", respuesta.dato.descripcionProducto);
         setValue("categoria", respuesta.dato.categoria);
       }
     });
@@ -121,7 +122,30 @@ const EditarProducto = () => {
           {errors.imagen?.message}
         </Form.Text>
       </Form.Group>
-      <Form.Group className="mb-3" controlId="formPrecio">
+      <Form.Group className="mb-3" controlId="formdescripcionProducto">
+        <Form.Label>Descripción producto*</Form.Label>
+        <Form.Control 
+        type="text" 
+        placeholder="Ej: Bebida con alto grado de alcohol"
+        minLength={10}
+        maxLength={300}
+        {...register('descripcionProducto', {
+          required:'La descripción del producto es obligatoria',
+          minLength:{
+            value:10,
+            message: 'La cantidad de caracteres es 10 como minimo'
+          },
+          maxLength:{
+            value:300,
+            message:'La cantidad maxima de caracteres es de 300'
+          }
+        })}
+        />
+        <Form.Text className="text-danger">
+          {errors.descripcionProducto?.message}
+        </Form.Text>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="formCategoria">
         <Form.Label>Categoria*</Form.Label>
         <Form.Select {
           ...register('categoria',{

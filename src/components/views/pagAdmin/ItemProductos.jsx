@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { borrarProductoAPI, consultarAPI } from '../../helpers/queriesAdmin';
 import Swal from 'sweetalert2';
 const itemProductos = ({producto, setProductos}) => {
-    const {_id, nombreProducto, categoria, imagen, precio} = {...producto} 
+    const {_id, nombreProducto, descripcionProducto,  categoria, imagen, precio} = {...producto} 
 
 
     
@@ -32,7 +32,7 @@ const borrarProducto = ()=>{
         <tr>
       
     
-      <td><img src={imagen} className="imgProductos" /></td>
+      <td className='text-center'><img src={imagen} className="imgProductos" /></td>
       <td>{nombreProducto}</td>
       <td>${precio}</td>
       <td>{categoria}</td>
