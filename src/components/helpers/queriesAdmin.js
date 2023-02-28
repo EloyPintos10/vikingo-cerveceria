@@ -1,7 +1,7 @@
 const URL = process.env.REACT_APP_API_RAGNAR;
 
 export const consultarAPI = async () => {
-    // console.log(URL)
+   
     try {
       const respuesta = await fetch(URL);
       const listaProductos = await respuesta.json();
@@ -27,13 +27,13 @@ export const consultarAPI = async () => {
   };
   
   export const crearProductoAPI = async (producto, token) => {
-    // console.log(URL)
+   
     try {
       const respuesta = await fetch(URL  , {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          // envio el token en el header personalizado
+          
            "x-token": token,
         },
         body: JSON.stringify(producto),
@@ -45,12 +45,12 @@ export const consultarAPI = async () => {
     }
   };
   export const borrarProductoAPI = async (_id, token) => {
-    // console.log(URL)
+   
     try {
       const respuesta = await fetch(URL + "/" + _id, {
         method: "DELETE",
         headers: {
-          // envio el token en el header personalizado
+          
            "x-token": token,
         },
       });
@@ -62,9 +62,9 @@ export const consultarAPI = async () => {
   };
   
   export const editarProductoAPI = async (_id, producto, token) => {
-    // console.log(URL)
+    
     try {
-      const respuesta = await fetch(URL + "/" + _id, {
+      const respuesta = await fetch(URL  + "/"+ _id, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

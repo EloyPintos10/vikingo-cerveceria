@@ -11,8 +11,8 @@ const itemProductos = ({producto, setProductos}) => {
 
 const borrarProducto = ()=>{
     // busco el token de localstorage y lo envio
-    // const token = JSON.parse(localStorage.getItem('tokenRagnar')).token|| null
-  borrarProductoAPI(_id).then((respuesta)=>{
+     const token = JSON.parse(localStorage.getItem('tokenRagnar')).token|| null
+  borrarProductoAPI(_id, token).then((respuesta)=>{
     
     // TAREA: agregar la ventana de sweetaler para preguntar si queremos borrar el producto, solo en el caso de la respuesta afirmativa realizar el sieguiente codigo:
     if(respuesta.status === 200){
@@ -30,11 +30,11 @@ const borrarProducto = ()=>{
 }
     return (
         <tr>
-      <td>{_id}</td>
+      
     
+      <td><img src={imagen} className="imgProductos" /></td>
       <td>{nombreProducto}</td>
       <td>${precio}</td>
-      <td><img src={imagen} className="imgProductos" /></td>
       <td>{categoria}</td>
       <td>
         <div className='botones'>

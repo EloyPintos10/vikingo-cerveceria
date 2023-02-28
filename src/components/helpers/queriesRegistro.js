@@ -5,10 +5,7 @@ export const consultarUserAPI = async () => {
     try {
       const respuesta = await fetch(URL + "/nuevo");
       const listaUsuarios = await respuesta.json();
-      return listaUsuarios;
-      //agregar aqui la logica para buscar el usuario por mail y password
-      // si lo encuentro retorno el objeto
-      //caso contrario retorno null u objeto vacio
+      return listaUsuarios;     
     } catch (e) {
       console.log(e);
     }
@@ -16,7 +13,7 @@ export const consultarUserAPI = async () => {
 
 
   export const obtenerUsuarioAPI = async (_id) => {
-    // console.log(URL)
+   
     try {
       const respuesta = await fetch(URL + "/" + _id);
       const producto = {
@@ -77,12 +74,12 @@ export const crearUsuarioAPI = async (usuario, token) => {
 
 
   export const borrarUsuarioAPI = async (_id, token) => {
-    // console.log(URL)
+    
     try {
       const respuesta = await fetch(URL + "/nuevo" + "/"+  _id, {
         method: "DELETE",
         headers: {
-          //  envio el token en el header personalizado
+          
           "x-token": token,
         },
       });
@@ -95,13 +92,13 @@ export const crearUsuarioAPI = async (usuario, token) => {
 
 
   export const editarUsuarioAPI = async (_id, token, usuario) => {
-    // console.log(URL)
+  
     try {
       const respuesta = await fetch(URL + "/" + _id, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
-           //"x-token": token,
+           "x-token": token,
         },
         body: JSON.stringify(usuario),
       });

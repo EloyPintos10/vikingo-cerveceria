@@ -29,7 +29,7 @@ const itemUsuarios = ({usuario, setUsuarios}) => {
 
     return (
         <tr>
-      <td>{_id}</td>
+      
     
       <td>{nombre}</td>
       <td>{email}</td>

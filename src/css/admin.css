@@ -1,3 +1,12 @@
+/* FUENTE */
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Pathway+Gothic+One&display=swap');
+
+
+.fuente{
+  font-family: 'Cabin Sketch', cursive;
+  
+}
+
 /* footer siempre abajo */
 #root{
     display: flex;
@@ -10,11 +19,14 @@
 }
 
 
+
+
 .fondoTabla{
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 17%, rgba(0,212,255,1) 46%, rgba(13,9,36,1) 85%);
-color: white;
+    background: rgb(245, 226, 226);
+    
+color: black;
 box-shadow: 0px 3px 10px 0px black;
+
 }
 
 .imgProductos{
@@ -22,6 +34,194 @@ box-shadow: 0px 3px 10px 0px black;
     height: 5rem;
     object-fit: cover;
 }
+
+.btn-Admin1{      
+    font-size: 15px;
+    margin: 40px  0px 10px 0px;
+    width: 8em;
+    padding: 10px;
+    background-color: black;
+    border: 2px solid rgba(253, 228, 0, 0.808); 
+    color: white;
+    box-shadow: 0px 3px 10px 0px black;
+}
+.btn-Admin{      
+    font-size: 20px;
+    margin: 40px  20px 10px 20px;
+    width: 8em;
+    padding: 10px;
+    background-color: black;
+    border: 2px solid rgba(253, 228, 0, 0.808); 
+    color: white;
+    box-shadow: 0px 3px 10px 0px black;
+}
+.btn-Admin1:hover{      
+  font-size: 20px;
+  font-weight: 700;
+  width: 8em;
+  margin: 40px 0px 10px 0px;
+  padding: 10px;
+  background-color: white;
+  border: 2px solid rgba(253, 228, 0, 0.808); 
+  color: black;
+  box-shadow: 0px 3px 10px 0px black;
+}
+.btn-Admin:hover{      
+    font-size: 20px;
+    width: 8em;
+    font-weight: 700;
+    margin: 40px  20px 10px 20px;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid rgba(253, 228, 0, 0.808); 
+    color: black;
+    box-shadow: 0px 3px 10px 0px black;
+}
+
+
+
+
+
+.mainAdmin{
+  display: flex;
+  margin-bottom: 40px;
+}
+
+
+/* PRUEBA APARICION DE TABLA */
+
+
+.show-element {
+  
+  animation-duration: 2s;
+  animation-fill-mode: both;  
+  animation-name: fadeIn;  
+  margin-top: 3rem;
+  
+}
+
+.hide-element {
+  animation-duration: 2s;
+  animation-fill-mode: both;
+  animation-name: fadeOut;
+}
+
+/*KeyFrames*/
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+@keyframes otherAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes animationTranslateIn {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@keyframes animationTranslateOut {
+  from {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-200px);
+  }
+}
+
+@media all and (max-width:756px){
+  .botonesAdmin{
+    display: flex;
+justify-content:space-around;
+  }
+
+  .mainAdmin{
+    display: block;
+    margin-bottom: 40px;
+    
+  }
+
+  .btn-Admin1{      
+    font-size: 12px;
+    margin: 20px 0px 20px 0px;
+    padding: 10px;
+    background-color: black;
+    border: 2px solid rgba(253, 228, 0, 0.808); 
+    color: white;
+    box-shadow: 0px 3px 10px 0px black;
+}
+.btn-Admin{      
+    font-size: 12px;
+    margin: 20px 0px 20px 0px;
+    padding: 10px;
+    background-color: black;
+    border: 2px solid rgba(253, 228, 0, 0.808); 
+    color: white;
+    box-shadow: 0px 3px 10px 0px black;
+}
+.btn-Admin1:hover{      
+  font-size: 12px;
+  font-weight: 700;
+  margin: 20px 0px 20px 0px;
+  padding: 10px;
+  background-color: white;
+  border: 2px solid rgba(253, 228, 0, 0.808); 
+  color: black;
+  box-shadow: 0px 3px 10px 0px black;
+}
+.btn-Admin:hover{      
+    font-size: 12px;
+    font-weight: 700;
+    margin: 20px 0px 20px 0px;
+    padding: 10px;
+    background-color: white;
+    border: 2px solid rgba(253, 228, 0, 0.808); 
+    color: black;
+    box-shadow: 0px 3px 10px 0px black;
+}
+
+
+  
+
+
+}
+
+
+
+
 
 
 
@@ -66,6 +266,7 @@ box-shadow: 0px 3px 10px 0px black;
 
 .titulosadmin{
     font-size: 20px;
+   
 }
 
 /* editar producto */

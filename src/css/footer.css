@@ -1,0 +1,59 @@
+.pieFooter{
+    background-color: black;
+    color: white;
+    display: flex;    
+    justify-content: center;  
+    border-top: 2px solid rgba(253, 228, 0, 0.808); 
+
+    
+    
+}
+
+.logo{
+    width: 7em;
+    border-radius: 49%;
+}
+.logoMenu{
+    width: 4em;
+    border-radius: 49%;
+}
+
+.sectionFooter{
+    display: flex;
+    justify-content: space-around;
+    background-image: url(../components/common/img/Fondo2Nav.png);
+    padding: 30px 0px;
+}
+
+
+
+.iconRedes1{
+    font-size: 3em;
+    margin-right: 15px;
+    
+}
+.iconRedes{
+    font-size: 3em;
+    margin: 0px 15px;
+    
+}
+
+.nosotros-a{
+    text-decoration: none;
+    color: black;
+}
+.nosotros-a:hover{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+}
+
+
+
+@media all and (max-width:756px){
+    .sectionFooter{
+        display: grid;       
+        background-color: aquamarine;
+        padding: 30px 0px;
+    }
+}

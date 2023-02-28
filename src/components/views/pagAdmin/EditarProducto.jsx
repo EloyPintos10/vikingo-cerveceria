@@ -3,8 +3,10 @@ import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useParams, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import { editarProductoAPI, obtenerProductoAPI } from "../../helpers/queriesAdmin";
+import { editarProductoAPI,obtenerProductoAPI } from "../../helpers/queriesAdmin";
 import "../../../css/admin.css"
+
+
 const EditarProducto = () => {
   const {
     register,
@@ -13,7 +15,9 @@ const EditarProducto = () => {
     setValue,
   } = useForm();
   //buscamos el parametros de la url
-  const { _id } = useParams();
+  
+  const {_id} = useParams();
+  console.log(_id)
   const navegacion = useNavigate();
 
   useEffect(() => {
@@ -29,7 +33,7 @@ const EditarProducto = () => {
   }, []);
 
   const onSubmit = (datos) => {
-    console.log(datos);    
+   // console.log(datos);    
     
     
     const token = JSON.parse(localStorage.getItem('tokenRagnar')).token|| null

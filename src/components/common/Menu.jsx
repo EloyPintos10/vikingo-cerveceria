@@ -9,7 +9,7 @@ import Offcanvas from 'react-bootstrap/Offcanvas';
 import Swal from 'sweetalert2';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import "../../css/inicio.css";
-import logoAnimado from "../common/img/logoAnimado2.gif"
+import Logo from "../common/img/LOGO VIKINGOS.png"
 
 const Menu = ({usuarioLogueado, setUsuarioLogueado}) => {
   const navegacion = useNavigate()
@@ -35,9 +35,9 @@ const redireccion = ()=>{
         <div>
              
       {[false].map((expand) => (
-        <Navbar key={expand} bg="black" expand={expand} className="mb-3 p-2">
+        <Navbar key={expand} expand={expand} className="  fondoprueba">
           <Container fluid >
-            <Navbar.Brand className='text-light  ' href="#"><img src={logoAnimado} alt="logo" className='logoAnimado' /></Navbar.Brand>
+            <Navbar.Brand className='text-light  ' href="#"><img src={Logo}  alt="logo" className='logoMenu' /></Navbar.Brand>
             <Navbar.Toggle className='bg-light' aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas 
               id={`offcanvasNavbar-expand-${expand}`}
