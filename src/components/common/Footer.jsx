@@ -2,19 +2,21 @@ import React from 'react';
 import "../../css/footer.css"
 import {BsFacebook, BsTwitter, BsInstagram  } from "react-icons/bs";
 import Logo from "../common/img/LOGO VIKINGOS.png"
+import { Link } from 'react-router-dom';
+
 
 const Footer = () => {
     return (
         <div>
             <article className='sectionFooter'>
-                <div><img src={Logo} alt="Logo" className='logo' /></div>
+                <Link to="/"><img src={Logo} alt="Logo" className='logo' /></Link>
                 <div>
                     <aside >
                         <h3>Contactos</h3>
                         <ul>
                             <li>011-222-5784</li>
                             <li>vikingos.birra@gmail.com</li>
-                            <li><a href="#" className='nosotros-a'>Nosotros</a></li>
+                            <li><Link to="/nosotros" className='nosotros-a'>Nosotros</Link></li>
                         </ul>
                     </aside>
                 </div>

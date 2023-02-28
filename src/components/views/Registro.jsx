@@ -20,7 +20,7 @@ const Registro = ({setUsuarioLogueado}) => {
   
     const onSubmit = (datos) => {
 
-      if(datos.email === "ragnar@hotmail.com" && datos.password === "Pintose1542"){
+      if(datos.email === "vikingo.birra@hotmail.com" && datos.password === "Pintose1542"){
        datos.perfil = "admin"
       }else{
         datos.perfil = "cliente"

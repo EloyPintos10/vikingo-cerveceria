@@ -1,9 +1,10 @@
 import React from 'react';
-
+import Error from "../common/img/error404.jpg"
+import "../../css/error.css"
 const Error404 = () => {
     return (
-        <div>
-            <h1>ERROR FATAL</h1>
+        <div className='text-center '>
+            <img src={Error} alt="Error 404" className='imgError' />
         </div>
     );
 };

@@ -12,6 +12,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Login from './components/views/Login';
 import { useState } from 'react';
 import Pedidos from './components/views/Pedidos';
+import About from './components/views/About';
 
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
       }
     ></Route>
     <Route path="*" element={<Error404></Error404>}></Route>
+    <Route path="nosotros" element={<About></About>}></Route>
   </Routes>
   <Footer></Footer>
 </BrowserRouter>

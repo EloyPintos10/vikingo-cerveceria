@@ -1,0 +1,11 @@
+.imgError{
+    width: 30em;
+    margin: 25px 0px;
+}
+
+@media all and (max-width:756px){
+    .imgError{
+        width: 20em;
+        margin: 25px 0px;
+    }
+}
