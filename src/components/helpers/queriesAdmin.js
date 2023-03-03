@@ -1,3 +1,5 @@
+
+
 const URL = process.env.REACT_APP_API_RAGNAR;
 
 export const consultarAPI = async () => {
@@ -11,15 +13,18 @@ export const consultarAPI = async () => {
       return false;
     }
   };
-  export const obtenerProductoAPI = async (_id) => {
-    // console.log(URL)
+  export const obtenerProductoAPI = async (_id) => {     
+     
     try {
-      const respuesta = await fetch(URL + "/" + _id);
-      const producto = {
-        dato: await respuesta.json(),
-        status: respuesta.status,
-      };
+      const respuesta = await fetch(URL +  "/" +  _id);
+      const producto =  
+        {
+          dato: await respuesta.json(),
+         status: respuesta.status,
+       };
+   
       return producto;
+      
     } catch (error) {
       console.log(error);
       return false;

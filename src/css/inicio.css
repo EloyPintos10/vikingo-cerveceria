@@ -47,6 +47,9 @@
             object-fit: cover;
             padding: 0px;
         }
+        .iconoMsj{
+            display: none;
+        }
     }
 
     @media all and (min-width:756px) and (max-width:991px){
@@ -178,7 +181,7 @@
             color: white;
             border-radius: 50%;
             position: fixed;
-            bottom: 3rem;
+            bottom: 4rem;
             right: 2rem;
         }
 

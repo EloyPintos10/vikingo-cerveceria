@@ -35,8 +35,8 @@ const CrearProductos = () => {
     return (
         
 
-        <section className="mainSection" >
-      <h1 className=" text-center mt-5">Agregar producto</h1>
+        <section className="mainSection my-5" >
+      <h1 className=" text-center mt-3">Agregar producto</h1>
       <hr />
       
       <Form onSubmit={handleSubmit(onSubmit)} className="container formulario" id='fondoCrear'>
@@ -69,11 +69,11 @@ const CrearProductos = () => {
           {...register('precio',{
             	required:'El precio del producto es un dato obligatorio',
               min:{
-                value:1,
+                value:100,
                 message: 'El precio minimo debe ser de $100'
               },
               max:{
-                value:10000,
+                value:50000,
                 message: 'El precio maximo debe ser de $50000'
               }
           })
@@ -130,12 +130,10 @@ const CrearProductos = () => {
             })
           }>
             <option value="">Seleccione una opcion</option>
-            <option value="remeras">Remeras</option>
-            <option value="jeans">Jeans</option>
-            <option value="bermudas">Bermudas</option>
-            <option value="chombas">Chombas</option>
-            <option value="short-baño">Short de Baño</option>
-            <option value="camisas">Camisas</option>
+            <option value="cervezas">Cervezas</option>
+            <option value="comidas">Comidas</option>
+            <option value="tragos">Tragos</option>
+            
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.categoria?.message}

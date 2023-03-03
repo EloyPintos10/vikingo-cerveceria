@@ -16,11 +16,11 @@ export const consultarUserAPI = async () => {
    
     try {
       const respuesta = await fetch(URL + "/" + _id);
-      const producto = {
+      const usuario = {
         dato: await respuesta.json(),
         status: respuesta.status,
       };
-      return producto;
+      return usuario;
     } catch (error) {
       console.log(error);
       return false;

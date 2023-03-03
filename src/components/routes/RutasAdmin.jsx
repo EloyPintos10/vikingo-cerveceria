@@ -22,7 +22,7 @@ const RutasAdmin = ({ setUsuarioLogueado }) => {
         ></Route>
         <Route
           exact
-          path="/editar/:id"
+          path="/editar/:_id"
           element={<EditarProducto></EditarProducto>}
         ></Route>
         

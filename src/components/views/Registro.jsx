@@ -1,81 +1,88 @@
-import React from 'react';
+import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
-import { crearUsuarioAPI } from '../helpers/queriesRegistro';
-import "../../css/registro.css"
-import emailjs from "emailjs-com"
-import bannerVertical from "../common/img/bannerVertical.png"
+import { crearUsuarioAPI } from "../helpers/queriesRegistro";
+import "../../css/registro.css";
+import emailjs from "emailjs-com";
+import bannerVertical from "../common/img/bannerVertical.png";
 
+const Registro = ({ setUsuarioLogueado }) => {
+  const navigate = useNavigate();
 
-const Registro = ({setUsuarioLogueado}) => {
-    const navigate = useNavigate();
-    
-    const {
-      register,
-      handleSubmit,
-      formState: { errors },
-    } = useForm();
-  
-    const onSubmit = (datos) => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
 
-      if(datos.email === "vikingo.birra@hotmail.com" && datos.password === "Pintose1542"){
-       datos.perfil = "admin"
-      }else{
-        datos.perfil = "cliente"
-      }    
-     
-        crearUsuarioAPI(datos, datos.perfil).then((respuesta) => {
-          if (respuesta.status === 201) {
-  
-            Swal.fire(
-              `Te registraste correctamente, ${datos.nombre}`,
-              "Inicia sesion con la nueva cuenta.",
-              "success"
-            );
+  const onSubmit = (datos) => {
+    if (
+      datos.email === "vikingo.birra@hotmail.com" &&
+      datos.password === "Pintose1542"
+    ) {
+      datos.perfil = "admin";
+    } else {
+      datos.perfil = "cliente";
+    }
 
-            var parametros = {
-              nombre:(datos.nombre),
-              email:(datos.email) 
-              
-          };
-            emailjs.send('service_2khpjbl', 'template_nkrf3fq',parametros, "-GX5UHwn7TZrNOH2Y")
-            .then(function(response) {
-               console.log('ENVIADO!', response.status, response.text);
-            }, function(error) {
-               console.log('FALLO...', error);
-            });
-           
-            
-            
-            
-              localStorage.setItem('tokenRagnar', JSON.stringify(datos));
-             
-               setUsuarioLogueado(datos, datos.perfil)
-           
-              navigate("/");
-          } else {
-            Swal.fire(
-              `Hubo un error inesperado`,
-              "Intentelo nuevamente en breve.",
-              "error"
-            );
-          }
+    crearUsuarioAPI(datos, datos.perfil).then((respuesta) => {
+      if (respuesta.status === 201) {
+        Swal.fire({
+          title: `${datos.nombre} <br/>  ¡Bienvenido a VIKINGO!`,
+
+          imageUrl:
+            "https://img.freepik.com/vector-premium/dos-tazas-vidrio-tostado-dibujadas-mano-llenas-cerveza-espuma-salpicada_544745-77.jpg?w=2000",
+          imageWidth: 250,
+          imageHeight: 150,
+          imageAlt: "Brindis",
+          confirmButtonColor: "#3085d6",
+          confirmButtonText: "Aceptar",
         });
-        
-       
 
-    };
-    return (
+        var parametros = {
+          nombre: datos.nombre,
+          email: datos.email,
+        };
+        emailjs
+          .send(
+            "service_2khpjbl",
+            "template_nkrf3fq",
+            parametros,
+            "-GX5UHwn7TZrNOH2Y"
+          )
+          .then(
+            function (response) {
+              console.log("ENVIADO!", response.status, response.text);
+            },
+            function (error) {
+              console.log("FALLO...", error);
+            }
+          );
+
+        localStorage.setItem("tokenRagnar", JSON.stringify(datos));
+
+        setUsuarioLogueado(datos, datos.perfil);
+
+        navigate("/");
+      } else {
+        Swal.fire(
+          `Hubo un error inesperado`,
+          "Intentelo nuevamente en breve.",
+          "error"
+        );
+      }
+    });
+  };
+  return (
+    <div className="d-flex justify-content-center">
+      <Form onSubmit={handleSubmit(onSubmit)} className="formulario2 my-5">
         <div>
-      
-          <Form onSubmit={handleSubmit(onSubmit)}  className="container formulario2 my-5" id='fondoCrear'>
-
-            <div className='row'>
-              <div className='col-lg-6 col-md-6'>
-              <h3 className="text-center my-5">Registrate!</h3>
-            <Form.Group className="mb-4 container">
+          <div>
+            <h3 className="text-center ">Registrate!</h3>
+            <hr />
+            <Form.Group className="my-4 container">
               <Form.Control
                 type="text"
                 placeholder="Ingrese un Nombre"
@@ -179,20 +186,19 @@ const Registro = ({setUsuarioLogueado}) => {
                       "Su contraseña debe tener como 30 caracteres como maximo",
                   },
                 })}
-             
               />
               <Form.Text className="text-danger mb-2">
                 {errors.password?.message}
               </Form.Text>
             </Form.Group>
             <div className="justify-content-center d-grid">
-              <Button
-                className="btn btn-dark btn-lg btn-block mt-2 btnRegistrarse"
+              <button
+                className="btn btn-light fw-bold mt-2 btnRegistrarse"
                 type="submit"
               >
                 Registrarse
-              </Button>
-             
+              </button>
+
               <button
                 className="btn btn-danger btn-sm mt-4 btnRegistrarse"
                 type="button"
@@ -201,16 +207,11 @@ const Registro = ({setUsuarioLogueado}) => {
                 ¿Ya estas registrado?
               </button>
             </div>
-              </div>
-              <div className='col-lg-6 col-md-6 text-center'>
-                <img src={bannerVertical} alt="banner" className='divImg' />
-              </div>
-            </div>
-            
-          </Form>
-        
+          </div>
         </div>
-    );
+      </Form>
+    </div>
+  );
 };
 
 export default Registro;
