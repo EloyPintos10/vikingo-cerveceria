@@ -14,6 +14,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Login from './components/views/Login';
 import { useState } from 'react';
 import Pedidos from './components/views/Pedidos';
+import Footer from "./components/common/Footer"
+
 
 
 function App() {
@@ -57,6 +59,8 @@ function App() {
             <Pedidos usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Pedidos>
           }
         ></Route>
+     
+        
 
     {/* aqui quiero las rutas protegidas */}
     <Route
@@ -69,7 +73,7 @@ function App() {
     ></Route>
     <Route path="*" element={<Error404></Error404>}></Route>
   </Routes>
-  
+  <Footer></Footer>
 </BrowserRouter>
 );
 }

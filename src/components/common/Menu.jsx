@@ -9,6 +9,8 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import Swal from "sweetalert2";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import "../../css/inicio.css";
+import logovikingo from "../common/img/vikingos.png"
+
 
 
 
@@ -35,89 +37,41 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
 
   return (
     <div>
-      {[false].map((expand) => (
-        <Navbar key={expand} expand={expand} className="mb-3 p-2 nav imgNav">
-          <Container fluid>
-            <Navbar.Brand className="text-light " href="#">
-             
-            </Navbar.Brand>
-            <Navbar.Toggle
-              className="bg-light"
-              aria-controls={`offcanvasNavbar-expand-${expand}`}
-            />
-            <Navbar.Offcanvas
-              id={`offcanvasNavbar-expand-${expand}`}
-              aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
-              placement="end"
-            >
-              <Offcanvas.Header closeButton>
-                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>
-                  Hola {usuarioLogueado.nombre}.!
-                </Offcanvas.Title>
-              </Offcanvas.Header>
-              <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3">
-                  <NavLink to="/" className="nav-item nav-link">
-                    Inicio
-                  </NavLink>
-                  <NavLink to="#action2" className="nav-item nav-link">
-                    Productos
-                  </NavLink>
-                  <NavDropdown
-                    title="Productos"
-                    id={`offcanvasNavbarDropdown-expand-${expand}`}
-                  >
-                    <NavDropdown.Item href="#action3">Camisas</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">Remeras</NavDropdown.Item>
-                    <NavDropdown.Item href="#action5">Chombas</NavDropdown.Item>
-                    <NavDropdown.Item href="#action6">
-                      Short de Baño
-                    </NavDropdown.Item>
-                  </NavDropdown>
-                </Nav>
-                <Form className="d-flex">
-                  <Form.Control
-                    type="search"
-                    placeholder="Search"
-                    className="me-2"
-                    aria-label="Search"
-                  />
-                  <Button variant="outline-success">Search</Button>
-                </Form>
-                {usuarioLogueado.nombre ? (
-                  <>
-                    <div className="d-flex text-center">
-                      <Button
-                        to="/administrar"
-                        className="btn btn-primary me-2 mt-3"
-                        onClick={redireccion}
-                      >
-                        Administrador
-                      </Button>
+      <Navbar collapseOnSelect expand="lg" variant="dark" className="nav imgNav items nave ">
+      <Container>
+        <Navbar.Brand href="#home" className="navegador" > <img src={logovikingo} alt=""  className="logoNav"/> </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav ">
+          
+          <Nav className="me-auto ">
+            
 
-                      <Button
-                        className="btn btn-danger me-2 mt-3"
-                        onClick={logout}
-                      >
-                        Cerrar Sesión
-                      </Button>
-                    </div>
-                  </>
-                ) : (
-                  <div className="d-flex text-center">
-                    <Link to="/login" className="btn btn-primary ms-2 mt-3">
-                      Iniciar Sesión
-                    </Link>
-                    <Link to="/registro" className="btn btn-primary ms-2 mt-3">
-                      Registrarse
-                    </Link>
-                  </div>
-                )}
-              </Offcanvas.Body>
-            </Navbar.Offcanvas>
-          </Container>
-        </Navbar>
-      ))}
+            <Nav.Link href="#features" className="fuente text-black item letra "> CERVEZAS</Nav.Link>
+            
+            
+
+            <Nav.Link href="#pricing" className="fuente text-black item ">TRAGOS</Nav.Link>
+            
+            
+
+            <Nav.Link href="#pricing" className="fuente text-black item">COMIDA</Nav.Link>
+           
+            
+
+           
+           
+            
+          </Nav>
+          <Nav>
+            <Nav.Link href="#deets">MI CUENTA</Nav.Link>
+            <Nav.Link eventKey={2} href="#memes">
+              CARRITO
+            </Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+      
     </div>
   );
 };

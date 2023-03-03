@@ -7,6 +7,8 @@ import DataStore from './pagInicio/DataStore';
 import "../../css/inicio.css"
 import ShoppingCart from './CarritoCompra/ShoppingCart';
 import Header from './CarritoCompra/Header';
+import Carrousel from './pagInicio/Carrousel';
+
 
 
 const Inicio = () => {
@@ -31,6 +33,7 @@ const Inicio = () => {
     },[])
     return (
         <>
+        <Carrousel></Carrousel>
         <DataStore></DataStore>
         <div className='text-center'>
             <h1 className='fw-bold '>PRODUCTOS</h1>
