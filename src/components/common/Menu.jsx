@@ -10,6 +10,9 @@ import Swal from "sweetalert2";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import "../../css/inicio.css";
 import logovikingo from "../common/img/vikingos.png"
+import { AiOutlineUser } from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
+
 
 
 
@@ -63,9 +66,11 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
             
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">MI CUENTA</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              CARRITO
+          
+            <Nav.Link href="#deets" className="text-black  " ><AiOutlineUser className="iconsNav fuente item" /></Nav.Link>
+            <Nav.Link eventKey={2} href="#memes" className="text-black">
+              
+              <AiOutlineShoppingCart className="iconsNav fuente fuente item"/>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
