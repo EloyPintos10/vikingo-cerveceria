@@ -3,7 +3,7 @@ import { Container, Row } from 'react-bootstrap';
 import CardProductoInicio from './pagInicio/cardProductoInicio';
 import { useEffect, useState } from "react";
 import { consultarAPI } from '../helpers/queriesAdmin';
-import DataStore from './pagInicio/DataStore';
+
 import "../../css/inicio.css"
 import ShoppingCart from './CarritoCompra/ShoppingCart';
 import Header from './CarritoCompra/Header';
@@ -34,7 +34,7 @@ const Inicio = () => {
     return (
         <>
         <Carrousel></Carrousel>
-        <DataStore></DataStore>
+        
         <div className='text-center'>
             <h1 className='fw-bold '>PRODUCTOS</h1>
         </div>
