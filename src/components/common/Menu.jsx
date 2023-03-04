@@ -9,14 +9,10 @@ import Offcanvas from "react-bootstrap/Offcanvas";
 import Swal from "sweetalert2";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import "../../css/inicio.css";
-import logovikingo from "../common/img/vikingos.png"
+import logovikingo from "../common/img/vikingos.png";
 import { AiOutlineUser } from "react-icons/ai";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-
-
-
-
-
+import Dropdown from "react-bootstrap/Dropdown";
 
 const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
   const navegacion = useNavigate();
@@ -40,44 +36,38 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
 
   return (
     <div>
-      <Navbar collapseOnSelect expand="lg" variant="dark" className="nav imgNav items nave ">
+     
+    <Navbar bg="light" expand="lg" className="nav imgNav navbar espacio  pd dropdown-toggle.flecha">
       <Container>
-        <Navbar.Brand href="#home" className="navegador" > <img src={logovikingo} alt=""  className="logoNav"/> </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav ">
-          
-          <Nav className="me-auto ">
-            
-
-            <Nav.Link href="#features" className="fuente text-black item letra "> CERVEZAS</Nav.Link>
-            
-            
-
-            <Nav.Link href="#pricing" className="fuente text-black item ">TRAGOS</Nav.Link>
-            
-            
-
-            <Nav.Link href="#pricing" className="fuente text-black item">COMIDA</Nav.Link>
-           
-            
-
-           
-           
-            
-          </Nav>
-          <Nav>
-          
-            <Nav.Link href="#deets" className="text-black  " ><AiOutlineUser className="iconsNav fuente item" /></Nav.Link>
-            <Nav.Link eventKey={2} href="#memes" className="text-black">
+        <Nav.Link href="#home"> < AiOutlineShoppingCart className="tamañoIconos2"/> </Nav.Link>
+        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+        
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">CERVEZAS</Nav.Link>
+            <Nav.Link href="#link">TRAGOS</Nav.Link>
+            <Nav.Link href="#link">COMIDA</Nav.Link>
+            <NavDropdown className="flecha"  id="basic-nav-dropdown" title={ <AiOutlineUser className="tamañoIconos"/>} >
               
-              <AiOutlineShoppingCart className="iconsNav fuente fuente item"/>
-            </Nav.Link>
+
+           
+              <NavDropdown.Item href="#action/3.1">Crear cuenta</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Iniciar sesión
+              </NavDropdown.Item>
+             
+            </NavDropdown>
+            <Nav.Link href="#home"> < AiOutlineShoppingCart className="tamañoIconos"/> </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
     </Navbar>
-      
+  
+     
+
     </div>
+   
   );
 };
 

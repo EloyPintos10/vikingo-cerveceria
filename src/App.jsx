@@ -18,6 +18,7 @@ import Footer from "./components/common/Footer"
 
 
 
+
 function App() {
 
   const usuario = JSON.parse(localStorage.getItem("tokenRagnar")) || {};
@@ -32,6 +33,7 @@ function App() {
     usuarioLogueado={usuarioLogueado}
     setUsuarioLogueado={setUsuarioLogueado}
   ></Menu>
+
  
   <Routes>
     <Route exact path="/" element={<Inicio></Inicio>}></Route>
@@ -73,6 +75,7 @@ function App() {
     ></Route>
     <Route path="*" element={<Error404></Error404>}></Route>
   </Routes>
+  
   <Footer></Footer>
 </BrowserRouter>
 );

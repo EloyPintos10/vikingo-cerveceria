@@ -4,6 +4,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Card from 'react-bootstrap/Card';
 import { Container } from 'react-bootstrap';
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 
 
@@ -48,46 +49,43 @@ const quantity =1
         <div className='container-items d-flex justify-content-center mb-4'>
           
 
-      <Card  style={{ width: '21rem' }}>
+      <Card  style={{ width: '21rem' }} >
       <Card.Img  src={imagen} className="imgTarjetas" />
-      <Card.Body>
+      <Card.Body className='card-body fondoT'>
       <Card.Title className="p-3 text-center">{nombreProducto}</Card.Title>
+      <p className='text-center'>$
+        {precio}
+      </p>
         
-        <a className='d-flex justify-content-center compra'>
-        <DropdownButton className='mt-3 boton' id="dropdown-item-button" title={title}  >
+       
 
 
           
     
 
-      <Dropdown.ItemText>Talle</Dropdown.ItemText>
-      <select className='inputTarjetas' >
-      <option  value="">Seleccione Talle</option>
-      <option  value="L">L</option>
-    <option value="S">S</option>
-    <option value="M">M</option>
-    <option value="XL">XL</option>
-    
-      </select>
-      <Dropdown.ItemText>Color</Dropdown.ItemText>
-      <select className='inputTarjetas' >
-      <option  value="">Seleccione Talle</option>
-      <option  value="L">L</option>
-    <option value="S">S</option>
-    <option value="M">M</option>
-    <option value="XL">XL</option>
-      </select>
-      <div className='btnAgregarCarrito'>
+     
+      
+     <div className='d-flex justify-content-around '> 
 
-    <button onClick={()=> onAnddProducts(producto)} className='mt-3 css-button-sliding-to-left--sky'  type='submit'> Agregar al carrito</button>
-      </div>
+
+
+
+
+      
+
+    <button onClick={()=> onAnddProducts(producto)} className='mt-3 css-button-sliding-to-left--sky '  type='submit'>Ver más</button>
+      
+     
+
+    <button onClick={()=> onAnddProducts(producto)} className='mt-3 css-button-sliding-to-left--sky '  type='submit'> <AiOutlineShoppingCart/></button>
+      
+     </div>
    
       
      
       
            
-    </DropdownButton>
-    </a>
+    
        
       </Card.Body>
     </Card>

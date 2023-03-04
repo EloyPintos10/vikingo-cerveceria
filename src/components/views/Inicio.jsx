@@ -50,7 +50,7 @@ const Inicio = () => {
         setCountProducts={setCountProducts}
         ></Header>
 
-<section id="mysection">
+<section id="tarjetas">
 
 <Container>
 
