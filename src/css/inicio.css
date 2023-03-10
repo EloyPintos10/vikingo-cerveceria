@@ -35,10 +35,7 @@
     }
 
 
-    .fondoprueba{
-        background-image: url(../components/common/img/Fondo2Nav.png);
-        
-    }
+    
 
     @media all and (max-width:756px){
         .logoAnimado{
