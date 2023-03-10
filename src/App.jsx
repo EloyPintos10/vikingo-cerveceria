@@ -13,6 +13,9 @@ import Login from './components/views/Login';
 import { useState } from 'react';
 import Pedidos from './components/views/Pedidos';
 import About from './components/views/About';
+import Footer from "./components/common/Footer"
+
+
 
 
 function App() {
@@ -29,6 +32,8 @@ function App() {
     usuarioLogueado={usuarioLogueado}
     setUsuarioLogueado={setUsuarioLogueado}
   ></Menu>
+
+ 
   <Routes>
     <Route exact path="/" element={<Inicio></Inicio>}></Route>
     <Route
@@ -56,6 +61,8 @@ function App() {
             <Pedidos usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Pedidos>
           }
         ></Route>
+     
+        
 
     {/* aqui quiero las rutas protegidas */}
     <Route
@@ -69,6 +76,7 @@ function App() {
     <Route path="*" element={<Error404></Error404>}></Route>
     <Route path="nosotros" element={<About></About>}></Route>
   </Routes>
+  
   <Footer></Footer>
 </BrowserRouter>
 );
