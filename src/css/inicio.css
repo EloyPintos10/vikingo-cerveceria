@@ -7,10 +7,6 @@
    
 }
 
-.logoNav{
-  width: 6em;
-  border-radius: 50%;
-}
 
 .navbar-brand.navegador{
   padding-top: 0px;
@@ -73,12 +69,19 @@
   
 }
 
+.titulos-inicio{
+    font-weight: 800;
+    margin-left: 20px;
+    border-bottom: 3px solid rgb(190, 180, 38);
+    margin-bottom: 15px;
+    
+}
+
     .tarjetas{
         flex-basis: fit-content;
        justify-content: center;
         margin-top: 25px;
-        box-shadow: 0px 5px 2px 0px rgb(26, 26, 26);
-       
+        box-shadow: 0px 5px 2px 0px rgb(26, 26, 26);    
         
         background-color: white;
        
@@ -87,15 +90,21 @@
     
     .imgTarjetas{
     width: 21rem;
-    height:25rem;
-    
+    height:22rem;
+    object-fit: cover;
    
     
     
     }
+
+
+
+    .claseVacia{
+        display: none;
+    }
     
     .card-body.fondoT {
-      background-color: beige;
+      background-color: rgb(223, 223, 208);
 
     }
     
@@ -105,37 +114,51 @@
         text-decoration: none;
         color: black;}
     
-    .logoAnimado{
-        width: 15em;
-        height: 10em;
-        object-fit: cover;
-        padding: 0px;
+    .link-drop{
+        text-decoration: none;
+        color: #070707;
+    }
+    .link-drop:hover{
+        text-decoration: none;
+        color: #070707;
     }
 
 
+    .link-drop.btnCerrar{
+        border-radius: none;
+        background-color:transparent;
+        color: black;
+        border: none;
+        
+    }
+    .link-drop.btnAdmin{
+        border-radius: none;
+        background-color:transparent;
+        color: black;
+        border: none;
+        
+    }
+    .link-drop.btnAdmin:hover{
+        border-radius: none;
+        background-color:black;
+        color: white;
+        border: none;
+        
+    }
+    .link-drop.btnCerrar:hover{
+        border-radius: none;
+        background-color: red;
+        color: black;
+        border: none;
+        width: fit-content;
+    }
+
+    .detalle-btn{
+        text-decoration: none;
+    }
     
 
-    @media all and (max-width:756px){
-        .logoAnimado{
-            width: 7em;
-            height: 12em;
-            object-fit: cover;
-            padding: 0px;
-        }
-        .iconoMsj{
-            display: none;
-        }
-    }
-
-    @media all and (min-width:756px) and (max-width:991px){
-        .logoAnimado{
-            width: 9em;
-            height: 13em;
-            object-fit: cover;
-            padding: 0px;
-        }
-
-    }
+   
         .iconoTarjetas{
           margin-top: 1rem;
             width: 4rem;
@@ -236,3 +259,32 @@
               background-image: url(https://www.canva.com/design/DAFcLkmS0qY/ohgkdMjhHkviUO_dBgX63w/view?utm_content=DAFcLkmS0qY&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink);
              }
              
+
+             @media all and (max-width:756px){
+        
+                .iconoMsj{
+                    display: none;
+                }
+        
+                .menuMobile{
+                    width: 6em;
+        
+                }
+        
+                .claseVacia{
+                    display: none;
+                }
+        
+                
+            }
+        
+            @media all and (min-width:756px) and (max-width:991px){
+                .menuMobile{
+                    width: 10em;
+        
+                }
+                .claseVacia{
+                    display: none;
+                }
+        
+            }

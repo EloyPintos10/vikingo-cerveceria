@@ -8,7 +8,7 @@ const Header = ({allProducts, setAllProducts, total,countProducts,setCountProduc
    
     const onDeleteProduct = producto => {
         const results = allProducts.filter(
-            item => item.id !== producto.id
+            item => item._id !== producto._id
         );
         
         setTotal(total - producto.precio * producto.quantity);
@@ -25,7 +25,7 @@ const Header = ({allProducts, setAllProducts, total,countProducts,setCountProduc
         <div>
 
 <header>
-			<h1>Tienda</h1>
+			
 
 			<div className='container-icon'>
 				<div
@@ -47,7 +47,7 @@ const Header = ({allProducts, setAllProducts, total,countProducts,setCountProduc
 						/>
 					</svg>
 					<div className='count-products'>
-						<span id='contador-productos'>0</span>
+						 <span id='contador-productos'>{allProducts.length}</span> 
 					</div>
 				</div>
 
@@ -60,10 +60,10 @@ const Header = ({allProducts, setAllProducts, total,countProducts,setCountProduc
 						<>
 							<div className='row-product'>
 								{allProducts.map(producto => (
-									<div className='cart-product' key={producto.id}>
+									<div className='cart-product' key={producto._id}>
 										<div className='info-cart-product'>
 											<span className='cantidad-producto-carrito'>
-												1
+												{producto.quantity}
 											</span>
 											<p className='titulo-producto-carrito'>
 												{producto.nombreProducto}

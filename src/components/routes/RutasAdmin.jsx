@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Administrador from "../views/Administrador";
 import CrearProductos from "../views/pagAdmin/CrearProductos";
 import EditarProducto from "../views/pagAdmin/EditarProducto";
-import Registro from "../views/Registro";
+
 
 
 const RutasAdmin = ({ setUsuarioLogueado }) => {

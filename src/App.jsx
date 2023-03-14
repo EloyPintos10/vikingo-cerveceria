@@ -5,7 +5,7 @@ import Menu from "./components/common/Menu"
 import Footer from "./components/common/Footer"
 import Registro from "./components/views/Registro"
 import Error404 from "./components/views/Error404"
-import DetalleProducto from "./components/views/DetalleProducto"
+
 import RutasAdmin from './components/routes/RutasAdmin';
 import RutasProtegidas from './components/routes/RutasProtegidas';
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,7 +13,7 @@ import Login from './components/views/Login';
 import { useState } from 'react';
 import Pedidos from './components/views/Pedidos';
 import About from './components/views/About';
-import Footer from "./components/common/Footer"
+
 
 
 
@@ -36,11 +36,7 @@ function App() {
  
   <Routes>
     <Route exact path="/" element={<Inicio></Inicio>}></Route>
-    <Route
-      exact
-      path="/detalleProducto/:id"
-      element={<DetalleProducto></DetalleProducto>}
-    ></Route>
+   
     <Route
       exact
       path="/login"
@@ -56,7 +52,7 @@ function App() {
 
 <Route
           exact
-          path="/pedidos/:id"
+          path="/pedidos/:_id"
           element={
             <Pedidos usuarioLogueado={usuarioLogueado} setUsuarioLogueado={setUsuarioLogueado}></Pedidos>
           }
@@ -77,7 +73,7 @@ function App() {
     <Route path="nosotros" element={<About></About>}></Route>
   </Routes>
   
-  <Footer></Footer>
+<Footer></Footer>
 </BrowserRouter>
 );
 }

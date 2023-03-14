@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Cabin+Sketch&family=Pathway+Gothic+One&display=swap');
+
+.fuente{
+    font-family: 'Cabin Sketch', cursive;
+    
+   
+}
+
+.img-modal{
+    width: 20em;
+
+}
+
+.text-precio{
+    font-size: 25px;
+    font-weight: 800;
+}
+
+
+.btn.detalle-btn{
+    background-color: black;
+    color: white;
+    border: 2px solid rgb(190, 180, 38);
+
+}
+.btn.detalle-btn:hover{
+    background-color: black;
+    color: white;
+    border: 2px solid rgb(190, 180, 38);
+
+}
+
+
+
+
+
+

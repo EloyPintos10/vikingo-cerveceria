@@ -12,19 +12,18 @@ const CrearProductos = () => {
   const navegacion = useNavigate();
 
   const onSubmit = (datos) =>{
-    console.log(datos)
-    // busco el token de localstorage y lo envio
+    console.log(datos)   
+      
+    datos.quantity = 1
+    console.log(datos.quantity)
     
     const token = JSON.parse(localStorage.getItem('tokenRagnar')).token|| null
     
-    crearProductoAPI(datos, token).then((respuesta)=>{
+    crearProductoAPI(datos, token, datos.quantity).then((respuesta)=>{
       console.log(respuesta)
-      if(respuesta.status === 201){
-        //si la respuesta es correcta indicarle al usuario
-        Swal.fire("Producto creado","El producto fue creado exitosamente","success");
-        //resetear el formulario
-        reset();
-        //redireccionar
+      if(respuesta.status === 201){       
+        Swal.fire("Producto creado","El producto fue creado exitosamente","success");        
+        reset();        
         navegacion('/administrar');
       }else{
         Swal.fire("Ocurrio un error","El producto no pudo ser creado","error")

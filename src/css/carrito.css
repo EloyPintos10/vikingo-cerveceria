@@ -21,8 +21,8 @@ img {
 /* Header */
 header {
 	display: flex;
-	justify-content: space-between;
-	padding: 30px 0 40px 0;
+	justify-content:end;
+	padding: 30px 15px 40px 0px;
 }
 
 .container-icon {

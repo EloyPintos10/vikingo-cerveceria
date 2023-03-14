@@ -31,6 +31,7 @@ const EditarProducto = () => {
         setValue("imagen", respuesta.dato.imagen);
         setValue("descripcionProducto", respuesta.dato.descripcionProducto);
         setValue("categoria", respuesta.dato.categoria);
+        setValue("quantity", respuesta.dato.quantity);
       }
     });
   }, []);
