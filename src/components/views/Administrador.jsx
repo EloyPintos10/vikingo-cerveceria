@@ -1,6 +1,6 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Container, Table, Button } from "react-bootstrap";
+import { Table, Button } from "react-bootstrap";
 import "../../css/admin.css";
 import { useState, useEffect } from "react";
 import Swal from "sweetalert2";
@@ -10,10 +10,13 @@ import { BsFillPlusCircleFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import { consultarUserAPI } from "../helpers/queriesRegistro";
 import ItemUsuarios from "../views/pagAdmin/ItemUsuarios";
+import { consultarPedidosAPI } from "../helpers/queriesPedidos";
+import ItemPedidos from "./pagAdmin/ItemPedidos";
 
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
+  const [pedidos, setPedidos] = useState([]);
   const [mostrarComponenteProductos, setMostrarComponenteProductos] =
     useState(null);
   const [mostrarComponenteUsuarios, setMostrarComponenteUsuarios] =
@@ -42,7 +45,23 @@ const Administrador = () => {
     consultarUserAPI().then(
       (respuesta) => {
         setUsuarios(respuesta);
-        console.log(respuesta);
+      },
+      (reason) => {
+        console.log(reason);
+
+        Swal.fire(
+          "Ocurrio un error",
+          "Intentelo nuevamente en unos minutos",
+          "error"
+        );
+      }
+    );
+  }, []);
+  useEffect(() => {
+    consultarPedidosAPI().then(
+      (respuesta) => {
+        setPedidos(respuesta);
+       
       },
       (reason) => {
         console.log(reason);
@@ -70,7 +89,6 @@ const Administrador = () => {
             }
             className="btn-Admin"
           >
-            {/*Aqui solo cambio el texto de mi boton, para el ejemplo */}
             {mostrarComponenteProductos ? `OCULTAR` : `PRODUCTOS`}
           </Button>
           <Button
@@ -79,7 +97,6 @@ const Administrador = () => {
             }
             className="btn-Admin"
           >
-            {/*Aqui solo cambio el texto de mi boton, para el ejemplo */}
             {mostrarComponenteUsuarios ? `OCULTAR` : `USUARIOS`}
           </Button>
           <Button
@@ -88,11 +105,10 @@ const Administrador = () => {
             }
             className="btn-Admin"
           >
-            {/*Aqui solo cambio el texto de mi boton, para el ejemplo */}
             {mostrarComponentePedidos ? `OCULTAR` : `PEDIDOS`}
           </Button>
         </article>
-        <div className={mostrarComponenteProductos ? "show-element" : true}>
+        <div className={mostrarComponenteProductos ? "show-element" : "true"}>
           {mostrarComponenteProductos && (
             <div className="d-flex justify-content-between">
               <p className="titulosadmin">LISTADO PRODUCTOS</p>
@@ -124,7 +140,7 @@ const Administrador = () => {
             </Table>
           )}
         </div>
-        <div className={mostrarComponenteUsuarios ? "show-element" : true}>
+        <div className={mostrarComponenteUsuarios ? "show-element" : "true"}>
           {mostrarComponenteUsuarios && (
             <div className="d-flex justify-content-between">
               <p className="titulosadmin">LISTADO USUARIOS</p>
@@ -156,7 +172,7 @@ const Administrador = () => {
           )}
         </div>
 
-        <div className={mostrarComponentePedidos ? "show-element" : true}>
+        <div className={mostrarComponentePedidos ?"show-element" : "true"}>
           {mostrarComponentePedidos && (
             <p className="titulosadmin text-center">LISTADO COMPRAS</p>
           )}
@@ -164,13 +180,22 @@ const Administrador = () => {
             <Table responsive bordered className="fondoTabla">
               <thead>
                 <tr>
-                  <th>N. Pedido</th>
+                  
                   <th>Usuario</th>
                   <th>Detalle</th>
+                  <th>Monto Total</th>
                   <th>Estado</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+              {pedidos.map((pedido) => (
+                  <ItemPedidos
+                    key={pedido._id}
+                    pedido={pedido}
+                    setPedidos={setPedidos}
+                  ></ItemPedidos>
+                ))}
+              </tbody>
             </Table>
           )}
         </div>

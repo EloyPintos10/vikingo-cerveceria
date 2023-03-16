@@ -2,7 +2,7 @@ import React from "react";
 import { SlHandbag } from "react-icons/sl";
 import { Card, Button, Modal } from "react-bootstrap";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import "../../../css/detalle-producto.css"
+import "../../../css/detalle-producto.css";
 import { useState } from "react";
 
 export const CardProductoInicio = ({
@@ -11,27 +11,25 @@ export const CardProductoInicio = ({
   setAllProducts,
   countProducts,
   setCountProducts,
-  
+
   total,
   setTotal,
 }) => {
-  const { _id, nombreProducto, precio, imagen, descripcionProducto, quantity } = {
-    ...producto,
-  };
-  
-  
-console.log(producto)
-  const onAnddProducts = (producto) => {
+  const { _id, nombreProducto, precio, imagen, descripcionProducto, quantity } =
+    {
+      ...producto,
+    };
 
-    console.log(quantity)
+  const onAnddProducts = (producto) => {
+    console.log(quantity);
     if (allProducts.find((item) => item._id === producto._id)) {
       const productos = allProducts.map((item) =>
         item._id === producto._id
           ? { ...item, quantity: item.quantity + 1 }
           : item
       );
-      setTotal(total + producto.precio *quantity);      
-      setCountProducts(countProducts + quantity);     
+      setTotal(total + producto.precio * quantity);
+      setCountProducts(countProducts + quantity);
       return setAllProducts([...productos]);
     }
 
@@ -39,7 +37,6 @@ console.log(producto)
     setCountProducts(countProducts + producto.quantity);
     setAllProducts([...allProducts, producto]);
     console.log(countProducts);
-   
   };
 
   const title = (
@@ -86,37 +83,28 @@ console.log(producto)
       </div>
 
       <Modal show={show} onHide={handleClose}>
-       
-          
-          
-
-          <Modal.Header closeButton>
-            <Modal.Title className="fuente fw-bold">{nombreProducto}</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-          <div  className="text-center">
-            <img src={imagen} alt="imagen Producto" className="img-modal"/>
+        <Modal.Header closeButton>
+          <Modal.Title className="fuente fw-bold">{nombreProducto}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <div className="text-center">
+            <img src={imagen} alt="imagen Producto" className="img-modal" />
           </div>
-            <p>{descripcionProducto}</p>
-          </Modal.Body>
-          <Modal.Footer className="d-flex justify-content-around">
-
-            <p className="text-precio">${precio}</p>
+          <p>{descripcionProducto}</p>
+        </Modal.Body>
+        <Modal.Footer className="d-flex justify-content-around">
+          <p className="text-precio">${precio}</p>
           <button
-                onClick={() => onAnddProducts(producto)}                
-                className="mt-3 css-button-sliding-to-left--sky "
-                type="submit"
-                
-              >
-                {" "}
-                <AiOutlineShoppingCart className="fs-4" />
-              </button>
-            
-          </Modal.Footer>
-          
-      
+            onClick={() => onAnddProducts(producto)}
+            className="mt-3 css-button-sliding-to-left--sky "
+            type="submit"
+          >
+            {" "}
+            <AiOutlineShoppingCart className="fs-4" />
+          </button>
+        </Modal.Footer>
       </Modal>
-      </div>
+    </div>
   );
 };
 

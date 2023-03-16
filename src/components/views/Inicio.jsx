@@ -102,7 +102,8 @@ const Inicio = () => {
              
              producto.categoria === "tragos" ?(
                 <CardProductoInicio
-                  key={producto._id}
+                 key={producto._id}
+              
                   producto={producto}
                   setProductos={setProductos}
                   allProducts={allProducts}

@@ -15,7 +15,7 @@ const CrearProductos = () => {
     console.log(datos)   
       
     datos.quantity = 1
-    console.log(datos.quantity)
+   
     
     const token = JSON.parse(localStorage.getItem('tokenRagnar')).token|| null
     

@@ -206,3 +206,41 @@ header {
   transform: scale(1.03);
   border-radius: 0;
 }
+
+
+.btn.sendPedido{
+	background-color: #000;
+	color: white;
+}
+
+
+@media all and (max-width:756px){
+
+	.container-cart-products {
+		position: absolute;
+		top: 50px;
+		right: 0;
+	
+		background-color: #fff;
+		width: 330px;
+		z-index: 1;
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+		border-radius: 10px;
+	}
+
+	.btn-clear-all {
+		border: none;
+		background-color: #000;
+		color: #fff;
+		padding: 10px 0;
+		display: block;
+		width: 100%;
+		margin-top: 10px;
+		border-bottom-left-radius: 10px;
+		border-bottom-right-radius: 10px;
+		font-family: inherit;
+		cursor: pointer;
+	  font-size: 16px;
+	  transition: all .3s ease;
+	}
+}
