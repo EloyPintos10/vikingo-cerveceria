@@ -1,5 +1,5 @@
 import React from "react";
-import { SlHandbag } from "react-icons/sl";
+
 import { Card, Button, Modal } from "react-bootstrap";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import "../../../css/detalle-producto.css";
@@ -21,7 +21,7 @@ export const CardProductoInicio = ({
     };
 
   const onAnddProducts = (producto) => {
-    console.log(quantity);
+   
     if (allProducts.find((item) => item._id === producto._id)) {
       const productos = allProducts.map((item) =>
         item._id === producto._id
@@ -36,14 +36,10 @@ export const CardProductoInicio = ({
     setTotal(producto.precio * quantity + total);
     setCountProducts(countProducts + producto.quantity);
     setAllProducts([...allProducts, producto]);
-    console.log(countProducts);
+    
   };
 
-  const title = (
-    <span>
-      <SlHandbag className="iconoTarjetas" title="compra rapida" />
-    </span>
-  );
+ 
 
   const [show, setShow] = useState(false);
 

@@ -14,7 +14,7 @@
     border-radius: 49%;
 }
 .logo2{
-    width: 5em;
+    width: 5.5em;
     border-radius: 49%;
 }
 
@@ -56,5 +56,10 @@
         display: grid;       
         background-color: aquamarine;
         padding: 30px 0px;
+    }
+
+    .logo2{
+        width: 3.5em;
+        border-radius: 49%;
     }
 }

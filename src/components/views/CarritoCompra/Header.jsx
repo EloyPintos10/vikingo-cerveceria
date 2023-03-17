@@ -2,9 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { crearPedidoAPI } from "../../helpers/queriesPedidos";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 import "../../../css/carrito.css";
-
 
 const Header = ({
   allProducts,
@@ -38,24 +37,28 @@ const Header = ({
       montoTotal: total,
       estado: "PENDIENTE",
     };
-    console.log(pedidoNuevo);
 
-    crearPedidoAPI(pedidoNuevo).then((respuesta) => {
-      console.log(respuesta);
-      if (respuesta.status === 201) {
-        Swal.fire(
-          "Pedido creado",
-          "El pedido fue confirmado exitosamente",
-          "success"
-        );
+   
+      crearPedidoAPI(pedidoNuevo).then((respuesta) => {
+        console.log(respuesta);
+        if (respuesta.status === 201) {
+          Swal.fire(
+            "Pedido creado",
+            "El pedido fue confirmado exitosamente",
+            "success"
+          );
 
-        navegacion("/");
-      } else {
-        Swal.fire("Ocurrio un error", "El pedido no pudo ser enviado", "error");
-      }
-    });
-    onCleanCart();
-  };
+          navegacion("/");
+        } else {
+          Swal.fire(
+            "Ocurrio un error",
+            "El pedido no pudo ser enviado",
+            "error"
+          );
+        }
+      });
+      onCleanCart();
+    };
 
   return (
     <div>

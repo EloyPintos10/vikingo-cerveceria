@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import { crearUsuarioAPI } from "../helpers/queriesRegistro";
 import "../../css/registro.css";
 import emailjs from "emailjs-com";
-import bannerVertical from "../common/img/bannerVertical.png";
+
 
 const Registro = ({ setUsuarioLogueado }) => {
   const navigate = useNavigate();
@@ -114,15 +114,15 @@ const Registro = ({ setUsuarioLogueado }) => {
                   required: "Debe ingresar un apellido",
                   minLength: {
                     value: 3,
-                    message: "El nombre debe tener al menos 3 caracteres",
+                    message: "El apellido debe tener al menos 3 caracteres",
                   },
                   maxLength: {
                     value: 30,
-                    message: "El nombre no debe tener mas de 30 caracteres",
+                    message: "El apellido no debe tener mas de 30 caracteres",
                   },
                   pattern: {
                     value: /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/gim,
-                    message: "Debe ingresar un nombre de apellido",
+                    message: "Debe ingresar un  apellido",
                   },
                 })}
               />
@@ -138,11 +138,11 @@ const Registro = ({ setUsuarioLogueado }) => {
                   required: "Debe ingresar un nombre de usuario",
                   minLength: {
                     value: 3,
-                    message: "El nombre debe tener al menos 3 caracteres",
+                    message: "El usuario debe tener al menos 3 caracteres",
                   },
                   maxLength: {
                     value: 30,
-                    message: "El nombre no debe tener mas de 30 caracteres",
+                    message: "El usuario no debe tener mas de 30 caracteres",
                   },
                   pattern: {
                     value: /^(?!.*\.\.)(?!.*\.$)[^\W][\w.]{0,29}$/gim,
@@ -162,7 +162,7 @@ const Registro = ({ setUsuarioLogueado }) => {
                   pattern: {
                     value:
                       /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g,
-                    message: "Debe ingresar un formato valido",
+                    message: "Debe ingresar un formato valido de email",
                   },
                 })}
               />

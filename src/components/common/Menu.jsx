@@ -45,39 +45,62 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#cervezas" className="fuente fw-bold">CERVEZAS</Nav.Link>
-              <Nav.Link href="#tragos" className="fuente fw-bold">TRAGOS</Nav.Link>
-              <Nav.Link href="#comida" className="fuente fw-bold">COMIDA</Nav.Link>
-              {usuarioLogueado.nombre ?(
+              <Nav.Link href="#cervezas" className="fuente fw-bold">
+                CERVEZAS
+              </Nav.Link>
+              <Nav.Link href="#tragos" className="fuente fw-bold">
+                TRAGOS
+              </Nav.Link>
+              <Nav.Link href="#comida" className="fuente fw-bold">
+                COMIDA
+              </Nav.Link>
+              {usuarioLogueado.nombre ? (
                 <>
-              <NavDropdown
-                className="flecha menuMobile"
-                id="basic-nav-dropdown"
-                title={<AiOutlineUser className="tamañoIconos" />}
-              >
-                
-                <NavDropdown.Item>
-                  <Button to="/Administrar" className="link-drop btnAdmin fuente" onClick={redireccion}>Administrador</Button>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <Button className="link-drop btnCerrar fuente" onClick={logout}>Cerrar Sesión</Button>
-                </NavDropdown.Item>
-              </NavDropdown>
-              </>
-              ) :(
+                  <NavDropdown
+                    className="flecha menuMobile"
+                    id="basic-nav-dropdown"
+                    title={<AiOutlineUser className="tamañoIconos" />}
+                  >
+                    <div className="text-center">
+                      <h5>Hola {usuarioLogueado.nombre}!</h5>
+                      <hr />
+                    </div>
+                    <NavDropdown.Item>
+                      <Button
+                        to="/Administrar"
+                        className="link-drop btnAdmin fuente"
+                        onClick={redireccion}
+                      >
+                        Administrador
+                      </Button>
+                    </NavDropdown.Item>
+                    <NavDropdown.Item>
+                      <Button
+                        className="link-drop btnCerrar fuente"
+                        onClick={logout}
+                      >
+                        Cerrar Sesión
+                      </Button>
+                    </NavDropdown.Item>
+                  </NavDropdown>
+                </>
+              ) : (
                 <NavDropdown
-                className="flecha"
-                id="basic-nav-dropdown"
-                title={<AiOutlineUser className="tamañoIconos" />}
-              >
-                
-                <NavDropdown.Item>
-                  <Link to="/registro" className="link-drop">Registrarse</Link>
-                </NavDropdown.Item>
-                <NavDropdown.Item>
-                  <Link to="/login" className="link-drop">Iniciar Sesión</Link>
-                </NavDropdown.Item>
-              </NavDropdown>
+                  className="flecha"
+                  id="basic-nav-dropdown"
+                  title={<AiOutlineUser className="tamañoIconos" />}
+                >
+                  <NavDropdown.Item>
+                    <Link to="/registro" className="link-drop">
+                      Registrarse
+                    </Link>
+                  </NavDropdown.Item>
+                  <NavDropdown.Item>
+                    <Link to="/login" className="link-drop">
+                      Iniciar Sesión
+                    </Link>
+                  </NavDropdown.Item>
+                </NavDropdown>
               )}
             </Nav>
           </Navbar.Collapse>

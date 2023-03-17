@@ -44,6 +44,12 @@ const itemPedidos = ({ pedido, setPedidos }) => {
     });
   };
 
+
+ 
+
+
+  
+
   const borrarPedido = () => {
     Swal.fire({
       title: "Cancelar este pedido?",
@@ -77,9 +83,13 @@ const itemPedidos = ({ pedido, setPedidos }) => {
     });
   };
   return (
+   
     <tr>
+       
       <td>{usuario}</td>
-      <td></td>
+      <td>{ Object.keys(detallePedido).map (datos => {
+      return((detallePedido[datos].quantity) + " * " + (detallePedido[datos].nombreProducto + " - ") )
+    })}</td>
       <td>${montoTotal}</td>
       <td>{estado}</td>
       <td>

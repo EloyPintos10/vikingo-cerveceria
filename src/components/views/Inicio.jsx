@@ -8,7 +8,7 @@ import { BsWhatsapp } from "react-icons/bs";
 import Header from "./CarritoCompra/Header";
 import Carrousel from "./pagInicio/Carrousel";
 
-const Inicio = () => {
+const Inicio = ({ setUsuarioLogueado, usuarioLogueado }) => {
   const [allProducts, setAllProducts] = useState([]);
   const [total, setTotal] = useState(0);
   const [countProducts, setCountProducts] = useState(0);
@@ -24,7 +24,10 @@ const Inicio = () => {
 
   return (
     <>
+    
       <Carrousel></Carrousel>
+
+    
 
       <Header       
         allProducts={allProducts}
@@ -34,6 +37,7 @@ const Inicio = () => {
         countProducts={countProducts}
         allCountProducts={setCountProducts}
         setCountProducts={setCountProducts}
+       
       ></Header>
 
       <section>

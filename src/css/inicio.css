@@ -168,6 +168,15 @@
             margin-bottom: 1rem
         }
     
+
+        .imgCarrousel{
+           height: 600px;
+           
+        }
+
+        .divCarousel{
+border-top: 2px solid rgb(190, 180, 38);
+        }
    
       
         /*EFECTO BTN AGREGAR AL CARRITO*/
@@ -255,9 +264,7 @@
               background-size: cover ;
              }
 
-             .imgCarrousel{
-              background-image: url(https://www.canva.com/design/DAFcLkmS0qY/ohgkdMjhHkviUO_dBgX63w/view?utm_content=DAFcLkmS0qY&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink);
-             }
+             
              
 
              @media all and (max-width:756px){
@@ -275,6 +282,15 @@
                     display: none;
                 }
         
+                .imgCarrousel{
+                    height: 200px; 
+                     
+                    object-fit: cover; 
+                                    
+                    
+                 }
+
+                 
                 
             }
         
@@ -287,4 +303,9 @@
                     display: none;
                 }
         
+                .imgCarrousel{
+                    height: 400px;
+                  
+                    
+                 }
             }
