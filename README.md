@@ -1,6 +1,6 @@
 # Proyecto Final - Vikingo Cerveceria
 
-Vikingo cerveceria es un proyecto final, basado en una web e-commerce. Utilizando React.js para su desarrollo completo. El usuario tiene la posibilidad de interactuar en la página observando las distintas opciones del menu y poder pedirlas atravez del carrito de compras logueandose previamente. 
+Vikingo cerveceria es un proyecto final, basado en una web e-commerce. Utilizando React.js para su desarrollo completo. El usuario tiene la posibilidad de interactuar en la página observando las distintas opciones del menu y poder pedirlas atravez del carrito de compras logueandose previamente. Además iniciando sesión con el perfil Admin se podra visualizar 3 tablas diferentes, una de productos (donde podrá agregar,borrar y editar productos), otra de usuarios (donde se listaran los usuarios registrados en la página) y una de pedidos que se realizaron (en donde se listaran los pedidos realizados y se podra borrarlos o tambien marcarlos como entregado).
 
 
 ## Comandos para utilizar el proyecto 
