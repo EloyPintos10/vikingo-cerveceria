@@ -31,6 +31,18 @@ const Header = ({
   };
 
   const guardarPedido = () => {
+    const token = JSON.parse(localStorage.getItem('tokenRagnar')) || null
+    if(!token){
+   
+      Swal.fire(
+        "Ups!! Debe Loguearse",
+        "Debe Iniciar Sesión para confirmar pedido.",
+        "warning"
+      );
+     }else{
+      
+    
+
     const pedidoNuevo = {
       usuario: JSON.parse(localStorage.getItem("tokenRagnar")).nombre || null,
       detallePedido: allProducts,
@@ -58,6 +70,7 @@ const Header = ({
         }
       });
       onCleanCart();
+    }
     };
 
   return (

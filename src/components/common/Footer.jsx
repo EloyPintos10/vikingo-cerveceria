@@ -12,7 +12,7 @@ const Footer = () => {
                 <Link to="/" className='centrado '><img src={Logo} alt="Logo" className='logo' /></Link>
                 <div>
                     <aside >
-                        <h3 className=' centrado'>Contactos</h3>
+                        <h3 className=' centrado fuente fw-bold'>Contactos</h3>
                         <ul>
                             <li>011-222-5784</li>
                             <li>vikingos.birra@gmail.com</li>
@@ -21,7 +21,7 @@ const Footer = () => {
                     </aside>
                 </div>
                 <div>
-                    <h3 className=' centrado'>Seguinos</h3>
+                    <h3 className=' centrado fuente fw-bold'>Seguinos</h3>
               <BsFacebook className='iconRedes1'></BsFacebook>
               <BsTwitter className='iconRedes'></BsTwitter>
               <BsInstagram className='iconRedes'></BsInstagram>

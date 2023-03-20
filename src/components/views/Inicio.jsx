@@ -12,7 +12,6 @@ const Inicio = ({ setUsuarioLogueado, usuarioLogueado }) => {
   const [allProducts, setAllProducts] = useState([]);
   const [total, setTotal] = useState(0);
   const [countProducts, setCountProducts] = useState(0);
- 
 
   const [productos, setProductos] = useState([]);
 
@@ -23,13 +22,10 @@ const Inicio = ({ setUsuarioLogueado, usuarioLogueado }) => {
   }, []);
 
   return (
-    <>
-    
+    <div>
       <Carrousel></Carrousel>
 
-    
-
-      <Header       
+      <Header
         allProducts={allProducts}
         setAllProducts={setAllProducts}
         total={total}
@@ -37,7 +33,6 @@ const Inicio = ({ setUsuarioLogueado, usuarioLogueado }) => {
         countProducts={countProducts}
         allCountProducts={setCountProducts}
         setCountProducts={setCountProducts}
-       
       ></Header>
 
       <section>
@@ -45,11 +40,12 @@ const Inicio = ({ setUsuarioLogueado, usuarioLogueado }) => {
           <div className="fuente titulos-inicio" id="cervezas">
             <h1>CERVEZAS</h1>
           </div>
+          
+            
+          <Row xs={1} md={2} lg={4}>
 
-  <Row xs={1} md={2} lg={4}>
-            {productos.map((producto) => 
-             
-             producto.categoria === "cervezas" ?(
+            {productos.map((producto) =>
+              producto.categoria === "cervezas" ? (
                 <CardProductoInicio
                   key={producto._id}
                   producto={producto}
@@ -62,22 +58,19 @@ const Inicio = ({ setUsuarioLogueado, usuarioLogueado }) => {
                   setCountProducts={setCountProducts}
                   allCountProducts={setCountProducts}
                 ></CardProductoInicio>
-             
-                ): (
-                  <div className="claseVacia"></div>
-                )
-              
+              ) : (
+                <div className="claseVacia">No hay Productos</div>
+              )
             )}
           </Row>
-
           
+
           <div className="fuente titulos-inicio" id="comida">
             <h1>COMIDAS</h1>
           </div>
           <Row xs={1} md={2} lg={4}>
-            {productos.map((producto) => 
-             
-             producto.categoria === "comidas" ?(
+            {productos.map((producto) =>
+              producto.categoria === "comidas" ? (
                 <CardProductoInicio
                   key={producto._id}
                   producto={producto}
@@ -90,24 +83,20 @@ const Inicio = ({ setUsuarioLogueado, usuarioLogueado }) => {
                   setCountProducts={setCountProducts}
                   allCountProducts={setCountProducts}
                 ></CardProductoInicio>
-             
-                ): (
-                  <div className="claseVacia"></div>
-                )
-              
+              ) : (
+                <div className="claseVacia">No hay Productos</div>
+              )
             )}
           </Row>
-          
+
           <div className="fuente titulos-inicio" id="tragos">
             <h1>TRAGOS</h1>
           </div>
           <Row xs={1} md={2} lg={4}>
-            {productos.map((producto) => 
-             
-             producto.categoria === "tragos" ?(
+            {productos.map((producto) =>
+              producto.categoria === "tragos" ? (
                 <CardProductoInicio
-                 key={producto._id}
-              
+                  key={producto._id}
                   producto={producto}
                   setProductos={setProductos}
                   allProducts={allProducts}
@@ -118,14 +107,12 @@ const Inicio = ({ setUsuarioLogueado, usuarioLogueado }) => {
                   setCountProducts={setCountProducts}
                   allCountProducts={setCountProducts}
                 ></CardProductoInicio>
-             
-                ): (
-                  <div className="claseVacia"></div>
-                )
-              
+              ) : (
+                <div className="claseVacia">No hay Productos</div>
+              )
             )}
           </Row>
-        </Container>
+          </Container>
 
         <a
           href="https://api.whatsapp.com/send?phone=+3815390682&text=Quiero%20Comprar!"
@@ -134,7 +121,7 @@ const Inicio = ({ setUsuarioLogueado, usuarioLogueado }) => {
           <BsWhatsapp className="iconoMsj" />
         </a>
       </section>
-    </>
+    </div>
   );
 };
 

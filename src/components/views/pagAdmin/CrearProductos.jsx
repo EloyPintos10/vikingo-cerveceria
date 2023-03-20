@@ -43,7 +43,7 @@ const CrearProductos = () => {
           <Form.Label>Nombre producto*</Form.Label>
           <Form.Control 
           type="text" 
-          placeholder="Ej: Remera"
+          placeholder="Ej: Cerveza"
           minLength={2}
           maxLength={50}
           {...register('nombreProducto', {

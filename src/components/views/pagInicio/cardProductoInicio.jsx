@@ -47,9 +47,9 @@ export const CardProductoInicio = ({
   const handleShow = () => setShow(true);
 
   return (
-    <div>
-      <div className="container-items d-flex justify-content-center mb-4">
-        <Card style={{ width: "21rem" }}>
+    <div className="d-flex justify-content-center">
+     
+        <Card className="card-style" >
           <Card.Img src={imagen} className="imgTarjetas" />
           <Card.Body className="card-body fondoT">
             <Card.Title className="p-3 text-center">
@@ -76,7 +76,7 @@ export const CardProductoInicio = ({
             </div>
           </Card.Body>
         </Card>
-      </div>
+     
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
