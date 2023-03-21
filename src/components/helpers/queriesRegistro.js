@@ -36,6 +36,7 @@ export const crearUsuarioAPI = async (usuario, token) => {
           "Content-Type": "application/json",
          "x-token": token,
         },
+        
         body: JSON.stringify(usuario),
 
       });
@@ -55,6 +56,7 @@ export const crearUsuarioAPI = async (usuario, token) => {
           "Content-Type": "application/json",
          
         },
+        
         body: JSON.stringify(usuario),
       });
       const datos = await respuesta.json();
@@ -82,6 +84,7 @@ export const crearUsuarioAPI = async (usuario, token) => {
           
           "x-token": token,
         },
+        
       });
       return respuesta;
     } catch (error) {
@@ -100,6 +103,7 @@ export const crearUsuarioAPI = async (usuario, token) => {
           "Content-Type": "application/json",
            "x-token": token,
         },
+        
         body: JSON.stringify(usuario),
       });
       return respuesta;

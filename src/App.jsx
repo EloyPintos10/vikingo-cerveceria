@@ -20,6 +20,8 @@ import About from './components/views/About';
 
 function App() {
 
+ 
+
   const usuario = JSON.parse(localStorage.getItem("tokenRagnar")) || {};
   const [usuarioLogueado, setUsuarioLogueado] = useState(usuario);
 

@@ -41,6 +41,7 @@ export const consultarAPI = async () => {
           
            "x-token": token,
         },
+        
         body: JSON.stringify(producto),
       });
       return respuesta;
@@ -58,6 +59,7 @@ export const consultarAPI = async () => {
           
            "x-token": token,
         },
+        
       });
       return respuesta;
     } catch (error) {
