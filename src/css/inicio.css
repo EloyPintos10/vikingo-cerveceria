@@ -110,14 +110,15 @@
     .imgTarjetas{
     width: 21rem;
     height:22rem;
-    object-fit: cover;  
+    object-fit: contain;  
     overflow:hidden;
     
     }
     .imgTarjetas:hover{
         -webkit-transform:scale(0.9);
         transform:scale(0.9); 
-       transition-duration: 1s;
+       transition-duration: 2s;
+       
     
     }
 
