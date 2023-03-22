@@ -18,13 +18,16 @@
 }
 
 .logo{
-    width: 7em;
+    width: 9em;
     border-radius: 49%;
 }
 .logo2{
     width: 5.5em;
     border-radius: 49%;
 }
+
+
+
 
 
 .sectionFooter{
@@ -35,6 +38,11 @@
 }
 
 
+.centrado{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
 
 .iconRedes1{
     font-size: 3em;
@@ -72,7 +80,8 @@
     }
 
     .centrado{
-        text-align: center;
+      justify-content: center;
+      align-items: center;
         margin-bottom: 15px;
     }
 }

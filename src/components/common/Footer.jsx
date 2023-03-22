@@ -9,7 +9,10 @@ const Footer = () => {
     return (
         <div>
             <article className='sectionFooter'>
+               
                 <Link to="/" className='centrado '><img src={Logo} alt="Logo" className='logo' /></Link>
+
+                
                 <div>
                     <aside >
                         <h3 className=' centrado fuente fw-bold'>Contactos</h3>

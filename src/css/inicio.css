@@ -11,6 +11,18 @@
 }
 
 
+.logo2{
+    width:8em;
+    border-radius: 49%;
+
+}
+
+.fuente-img{
+    font-size: 25px;
+}
+
+
+
 .navbar-brand.navegador{
   padding-top: 0px;
     padding-bottom: 0px;
@@ -250,7 +262,8 @@ border-top: 2px solid rgb(190, 180, 38);
                  background-size: cover ;
              }
              .navbar.espacio{
-              --bs-navbar-nav-link-padding-x: 5rem;
+              --bs-navbar-nav-link-padding-x: 5em;
+            
               font-size: 20px;
              }
              .dropdown-toggle.flecha::after{
@@ -258,7 +271,7 @@ border-top: 2px solid rgb(190, 180, 38);
                 display: none;
             }
             .navbar.pd {
-              
+             
               --bs-navbar-padding-y: 2.5rem;}
 
               .tamañoIconos{

@@ -61,9 +61,8 @@ const Registro = ({ setUsuarioLogueado }) => {
             }
           );
 
-        localStorage.setItem("tokenRagnar", JSON.stringify(datos));
-
-        setUsuarioLogueado(datos, datos.perfil);
+          localStorage.setItem("tokenRagnar", JSON.stringify(respuesta));
+          setUsuarioLogueado(respuesta);
 
         navigate("/");
       } else {

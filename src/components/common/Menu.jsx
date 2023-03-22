@@ -1,10 +1,11 @@
 import React from "react";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
-import { Button } from "react-bootstrap";
+import { Button, NavLink } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Swal from "sweetalert2";
+
 import { useNavigate, Link } from "react-router-dom";
 import "../../css/inicio.css";
 import { AiOutlineUser } from "react-icons/ai";
@@ -37,23 +38,24 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
         expand="lg"
         className="nav imgNav navbar espacio  pd dropdown-toggle.flecha"
       >
-        <Container>
-          <Link to="/">
+        <div className="d-flex container">
+        
+          <Link to="/" className="fuente-img">
             <img src={Logo} alt="Logo" className="logo2" />
           </Link>
 
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#cervezas" className="fuente fw-bold">
+              <NavLink href="#cervezas" className="fuente fw-bold">
                 CERVEZAS
-              </Nav.Link>
-              <Nav.Link href="#tragos" className="fuente fw-bold">
+              </NavLink>
+              <NavLink href="#tragos" className="fuente fw-bold">
                 TRAGOS
-              </Nav.Link>
-              <Nav.Link href="#comida" className="fuente fw-bold">
+              </NavLink>
+              <NavLink href="#comida" className="fuente fw-bold">
                 COMIDA
-              </Nav.Link>
+              </NavLink>
               {usuarioLogueado.nombre ? (
                 <>
                   <NavDropdown
@@ -104,7 +106,7 @@ const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
               )}
             </Nav>
           </Navbar.Collapse>
-        </Container>
+          </div>
       </Navbar>
     </div>
   );

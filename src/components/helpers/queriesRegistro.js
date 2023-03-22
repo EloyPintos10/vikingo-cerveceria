@@ -40,7 +40,16 @@ export const crearUsuarioAPI = async (usuario, token) => {
         body: JSON.stringify(usuario),
 
       });
-      return respuesta;
+     
+      const datos = await respuesta.json();
+      return {
+        status: respuesta.status,
+        mensaje: datos.mensaje,
+        nombre: datos.nombre,
+        perfil:datos.perfil,
+        token: datos.token,
+        uid: datos.uid,
+      };
     } catch (e) {
       console.log(e);
     }
