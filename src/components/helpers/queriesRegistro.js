@@ -22,7 +22,7 @@ export const consultarUserAPI = async () => {
       };
       return usuario;
     } catch (error) {
-      console.log(error);
+      console.error(error);
       return false;
     }
   };
@@ -78,7 +78,7 @@ export const crearUsuarioAPI = async (usuario, token) => {
         uid: datos.uid,
       };
     } catch (error) {
-      console.log("errores en el login");
+      console.error("errores en el login");
       return;
     }
   };
@@ -97,7 +97,7 @@ export const crearUsuarioAPI = async (usuario, token) => {
       });
       return respuesta;
     } catch (error) {
-      console.log(error);
+      console.error(error);
       return false;
     }
   };
@@ -117,7 +117,7 @@ export const crearUsuarioAPI = async (usuario, token) => {
       });
       return respuesta;
     } catch (error) {
-      console.log(error);
+      console.error(error);
       return false;
     }
   };

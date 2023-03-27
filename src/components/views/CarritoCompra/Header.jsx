@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { crearPedidoAPI } from "../../helpers/queriesPedidos";
 import Swal from "sweetalert2";
-import { useNavigate, Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "../../../css/carrito.css";
 
 const Header = ({
@@ -44,7 +44,7 @@ const Header = ({
     
 
     const pedidoNuevo = {
-      usuario: JSON.parse(localStorage.getItem("tokenRagnar")).nombre || null,
+      usuario: JSON.parse(localStorage.getItem("tokenRagnar")).nombre,
       detallePedido: allProducts,
       montoTotal: total,
       estado: "PENDIENTE",

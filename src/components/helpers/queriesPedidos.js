@@ -6,14 +6,13 @@ export const crearPedidoAPI = async (pedidoNuevo) => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-
        
       },
       body: JSON.stringify(pedidoNuevo),
     });
     return respuesta;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return false;
   }
 };
@@ -28,7 +27,7 @@ export const borrarPedidoAPI = async (_id) => {
     });
     return respuesta;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return false;
   }
 };
@@ -41,7 +40,7 @@ export const consultarPedidosAPI = async () => {
     const listaPedidos = await respuesta.json();
     return listaPedidos;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return false;
   }
 };
@@ -59,7 +58,7 @@ export const editarPedidoAPI = async (_id, pedido) => {
     });
     return respuesta;
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return false;
   }
 };
