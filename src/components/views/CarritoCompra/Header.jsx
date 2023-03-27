@@ -44,7 +44,7 @@ const Header = ({
     
 
     const pedidoNuevo = {
-      usuario: JSON.parse(localStorage.getItem("tokenRagnar")).userName,
+      usuario: JSON.parse(localStorage.getItem("tokenRagnar")).nombre,
       detallePedido: allProducts,
       montoTotal: total,
       estado: "PENDIENTE",
