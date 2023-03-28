@@ -37,7 +37,8 @@ function App() {
 
  
   <Routes>
-    <Route exact path="/" element={<Inicio></Inicio>}></Route>
+    <Route exact path="/" element={<Inicio  usuarioLogueado={usuarioLogueado}
+    setUsuarioLogueado={setUsuarioLogueado}></Inicio>}></Route>
    
     <Route
       exact

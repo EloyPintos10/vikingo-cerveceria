@@ -33,6 +33,8 @@ const Inicio = ({ setUsuarioLogueado, usuarioLogueado }) => {
         countProducts={countProducts}
         allCountProducts={setCountProducts}
         setCountProducts={setCountProducts}
+        usuarioLogueado={usuarioLogueado}
+        setUsuarioLogueado={setUsuarioLogueado}
       ></Header>
 
       <section>

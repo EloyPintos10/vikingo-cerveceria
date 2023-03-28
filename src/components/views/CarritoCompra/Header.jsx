@@ -12,6 +12,8 @@ const Header = ({
   countProducts,
   setCountProducts,
   setTotal,
+  setUsuarioLogueado,
+  usuarioLogueado,
 }) => {
   const [active, setActive] = useState(false);
 
@@ -41,7 +43,7 @@ const Header = ({
       );
      }else{
       
-    
+    console.log(usuarioLogueado)
 
     const pedidoNuevo = {
       usuario: JSON.parse(localStorage.getItem("tokenRagnar")).nombre,
