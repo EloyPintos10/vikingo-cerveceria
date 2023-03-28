@@ -18,7 +18,7 @@ const Header = ({
   const [active, setActive] = useState(false);
 
   const navegacion = useNavigate();
-
+  
   const onDeleteProduct = (producto) => {
     const results = allProducts.filter((item) => item._id !== producto._id);
 
@@ -43,10 +43,10 @@ const Header = ({
       );
      }else{
       
-    console.log(usuarioLogueado)
+   
 
     const pedidoNuevo = {
-      usuario: JSON.parse(localStorage.getItem("tokenRagnar")).nombre,
+      usuario: usuarioLogueado.nombre,
       detallePedido: allProducts,
       montoTotal: total,
       estado: "PENDIENTE",
