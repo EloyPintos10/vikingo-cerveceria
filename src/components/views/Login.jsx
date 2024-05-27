@@ -4,8 +4,9 @@ import { useNavigate, Link, useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import { login } from "../helpers/queriesRegistro";
-
 import "../../css/registro.css";
+
+
 const Login = ({ setUsuarioLogueado }) => {
   const navigate = useNavigate();
   const {
@@ -30,7 +31,7 @@ const Login = ({ setUsuarioLogueado }) => {
         });
         localStorage.setItem("tokenRagnar", JSON.stringify(respuesta));
         setUsuarioLogueado(respuesta);
-        navigate("/");
+        navigate("/administrar/");
       } else {
         Swal.fire(
           "Error",

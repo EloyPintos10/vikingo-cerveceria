@@ -1,9 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import { crearPedidoAPI } from "../../helpers/queriesPedidos";
+import { pagarPedidoAPI } from "../../helpers/queriesPagos";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import "../../../css/carrito.css";
+
 
 const Header = ({
   allProducts,
@@ -18,7 +19,7 @@ const Header = ({
   const [active, setActive] = useState(false);
 
   const navegacion = useNavigate();
-  
+
   const onDeleteProduct = (producto) => {
     const results = allProducts.filter((item) => item._id !== producto._id);
 
@@ -32,48 +33,37 @@ const Header = ({
     setCountProducts(0);
   };
 
-  const guardarPedido = () => {
-    const token = JSON.parse(localStorage.getItem('tokenRagnar')) || null
-    if(!token){
-   
+  const pagarPedido = () => {
+    const token = JSON.parse(localStorage.getItem("tokenRagnar")) || null;
+    if (!token) {
       Swal.fire(
         "Ups!! Debe Loguearse",
         "Debe Iniciar Sesión para confirmar pedido.",
         "warning"
       );
-     }else{
-      
-   
+    } else {
+      const pagoNuevo = {       
+        detallePedido: allProducts,
+        montoTotal: total,
+        quantity :1,
+      };
 
-    const pedidoNuevo = {
-      usuario: usuarioLogueado.nombre,
-      detallePedido: allProducts,
-      montoTotal: total,
-      estado: "PENDIENTE",
-    };
-
-   
-      crearPedidoAPI(pedidoNuevo).then((respuesta) => {
+      pagarPedidoAPI(pagoNuevo).then((respuesta) => {
         console.log(respuesta);
-        if (respuesta.status === 201) {
-          Swal.fire(
-            "Pedido creado",
-            "El pedido fue confirmado exitosamente",
-            "success"
-          );
-
-          navegacion("/");
+        if (respuesta.status === 201) {        
+          window.location.href= respuesta.data.response.body.init_point
+          onCleanCart();
         } else {
           Swal.fire(
             "Ocurrio un error",
-            "El pedido no pudo ser enviado",
+            "El pedido no pudo ser cobrado",
             "error"
           );
         }
       });
-      onCleanCart();
+      
     }
-    };
+  };
 
   return (
     <div>
@@ -144,10 +134,10 @@ const Header = ({
                   <h3>Total:</h3>
                   <span className="total-pagar">${total}</span>
                 </div>
-                <div className="d-flex ">
-                  <button
-                    className=" btn-clear-all me-2"
-                    onClick={guardarPedido}
+                <div className="d-flex  " id="wallet_container">
+                  <button                   
+                    className=" btn-clear-all me-2"                    
+                    onClick={pagarPedido}
                   >
                     CONFIRMAR
                   </button>

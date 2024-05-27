@@ -13,6 +13,7 @@ export const consultarAPI = async () => {
       return false;
     }
   };
+  
   export const obtenerProductoAPI = async (_id) => {     
      
     try {

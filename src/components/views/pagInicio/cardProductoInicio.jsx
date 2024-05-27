@@ -1,9 +1,9 @@
 import React from "react";
-
 import { Card, Button, Modal } from "react-bootstrap";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import "../../../css/detalle-producto.css";
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 export const CardProductoInicio = ({
   producto,
@@ -27,12 +27,18 @@ export const CardProductoInicio = ({
         item._id === producto._id
           ? { ...item, quantity: item.quantity + 1 }
           : item
-      );
-      setTotal(total + producto.precio * quantity);
-      setCountProducts(countProducts + quantity);
-      return setAllProducts([...productos]);
-    }
-
+        );
+        
+        setTotal(total + producto.precio * quantity);
+        setCountProducts(countProducts + quantity);
+        return setAllProducts([...productos]);
+      }
+      
+      Swal.fire({
+        title: `¡Agregado al carito!`,    
+        confirmButtonColor: "#3085d6",      
+        confirmButtonText: "Aceptar",
+      });
     setTotal(producto.precio * quantity + total);
     setCountProducts(countProducts + producto.quantity);
     setAllProducts([...allProducts, producto]);

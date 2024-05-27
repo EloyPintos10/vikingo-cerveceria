@@ -13,10 +13,19 @@ import Logo from "../common/img/LOGO VIKINGOS.png";
 
 const Menu = ({ usuarioLogueado, setUsuarioLogueado }) => {
   const navegacion = useNavigate();
+  
   const logout = () => {
-    localStorage.removeItem("tokenRagnar");
+
+    Swal.fire({
+      title: `¡Sesión Cerrada!`,    
+      confirmButtonColor: "#3085d6",      
+      confirmButtonText: "Aceptar",
+    });
+    localStorage.removeItem("tokenRagnar")
     setUsuarioLogueado({});
-    navegacion("/");
+    navegacion("/");   
+
+   
   };
 
   const redireccion = () => {
